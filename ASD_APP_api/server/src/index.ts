@@ -1,10 +1,10 @@
 import express, { Application } from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
-
 import indexRoutes from './routes/indexRoutes';
 import mutantRoutes from './routes/mutantRoutes';
-
+import vehicleRoutes from './routes/vehicleRoutes';
+import powerRoutes from './routes/mutantRoutes';
 class Server {
 
     public app: Application;
@@ -14,7 +14,7 @@ class Server {
         this.config();
         this.routes();
         
-
+    }
     config(): void {
         this.app.set('port', process.env.PORT || 3000);
 
@@ -27,6 +27,8 @@ class Server {
     routes(): void {
         this.app.use('/', indexRoutes);
         this.app.use('/api/mutant', mutantRoutes);
+        this.app.use('/api/mutant/power', powerRoutes);
+        this.app.use('/api/mutant/vehicle', vehicleRoutes);
     }
 
     start() {
