@@ -16,6 +16,7 @@ class MutantRoutes {
         this.router.post('/', mutantController_1.default.create);
         this.router.put('/:mutid', mutantController_1.default.update);
         this.router.delete('/:mutid', mutantController_1.default.delete);
+        this.router.delete('/survived/:mutid', mutantController_1.default.survived);
     }
 }
 exports.default = new MutantRoutes().router;

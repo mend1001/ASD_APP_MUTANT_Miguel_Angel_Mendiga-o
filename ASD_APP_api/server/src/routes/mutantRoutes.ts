@@ -17,6 +17,7 @@ class MutantRoutes {
         this.router.post('/', mutantController.create);
         this.router.put('/:mutid', mutantController.update);
         this.router.delete('/:mutid', mutantController.delete);
+        this.router.delete('/survived/:mutid', mutantController.survived);
     }
 
 }
