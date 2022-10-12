@@ -9,7 +9,7 @@ export class SearchPipe implements PipeTransform {
 
     if (arg === '' || arg.length < 1) return value;
     const result = [];
-    /*for (const mutant of value) {
+    for (const mutant of value) {
       if (mutant.mutnom.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
         result.push(mutant);
       };
@@ -18,7 +18,7 @@ export class SearchPipe implements PipeTransform {
       if (mutant.mutapodo.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
         result.push(mutant);
       };
-    };*/
+    };
 
     for (const mutant of value) {
       if (mutant.paiid.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
