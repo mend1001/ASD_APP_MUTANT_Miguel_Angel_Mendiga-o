@@ -9,7 +9,7 @@ const cors_1 = __importDefault(require("cors"));
 const indexRoutes_1 = __importDefault(require("./routes/indexRoutes"));
 const mutantRoutes_1 = __importDefault(require("./routes/mutantRoutes"));
 const vehicleRoutes_1 = __importDefault(require("./routes/vehicleRoutes"));
-const mutantRoutes_2 = __importDefault(require("./routes/mutantRoutes"));
+const powerRoutes_1 = __importDefault(require("./routes/powerRoutes"));
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
@@ -26,7 +26,7 @@ class Server {
     routes() {
         this.app.use('/', indexRoutes_1.default);
         this.app.use('/api/mutant', mutantRoutes_1.default);
-        this.app.use('/api/power', mutantRoutes_2.default);
+        this.app.use('/api/power', powerRoutes_1.default);
         this.app.use('/api/vehicle', vehicleRoutes_1.default);
     }
     start() {
