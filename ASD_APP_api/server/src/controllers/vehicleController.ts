@@ -63,7 +63,7 @@ class VehicleController {
     public async delete(req: Request, res: Response): Promise<void> {
         try{
         const { vehid } = req.params;
-        await pool.query("UPDATE asd_prueba.t_vehiculo SET t_vehiculo.mutactivo = '0' WHERE mutid = ?", [vehid]);
+        await pool.query("UPDATE asd_prueba.t_vehiculo SET t_vehiculo.vehactivo = '0' WHERE vehid = ?", [vehid]);
         res.json({ message: "The vehicle was deleted" });
     }
     catch(e) {

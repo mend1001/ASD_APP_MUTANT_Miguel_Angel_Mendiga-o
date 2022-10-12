@@ -1,6 +1,7 @@
 import express, { Router } from 'express';
+import mutantController from '../controllers/mutantController ';
 
-import mutantController from '../controllers/mutantController';
+
 
 class MutantRoutes {
 

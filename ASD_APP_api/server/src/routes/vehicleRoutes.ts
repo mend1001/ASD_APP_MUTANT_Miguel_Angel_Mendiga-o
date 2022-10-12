@@ -12,10 +12,10 @@ class VehicleRoutes {
 
     config() {
         this.router.get('/vehicle/', vehicleController.list);
-        this.router.get('/vehicle/:mutid', vehicleController.getOne);
+        this.router.get('/vehicle/:vehid', vehicleController.getOne);
         this.router.post('/vehicle/', vehicleController.create);
-        this.router.put('/vehicle/:mutid', vehicleController.update);
-        this.router.delete('/vehicle/:mutid', vehicleController.delete);
+        this.router.put('/vehicle/:vehid', vehicleController.update);
+        this.router.delete('/vehicle/:vehid', vehicleController.delete);
     }
 
 }

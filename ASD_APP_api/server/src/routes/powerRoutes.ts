@@ -1,6 +1,7 @@
 import express, { Router } from 'express';
+import powerController from '../controllers/powerController ';
 
-import powerController from '../controllers/powerController';
+
 
 class PowerRoutes {
 

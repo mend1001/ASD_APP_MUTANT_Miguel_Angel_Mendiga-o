@@ -105,4 +105,7 @@ CREATE TABLE IF NOT EXISTS `ASD_PRUEBA`.`t_poder_mutante` (
 ENGINE = InnoDB;
 
 ALTER TABLE `asd_prueba`.`t_vehiculo` 
-insert COLUMN `vehimg` `vehimg` VARCHAR(700) NULL DEFAULT NULL ;
+ADD COLUMN `vehimg` `vehimg` VARCHAR(700) NULL DEFAULT NULL ;
+
+ALTER TABLE `asd_prueba`.`t_vehiculo` 
+ADD COLUMN `vehactivo` TINYINT NOT NULL AFTER `vehimg`

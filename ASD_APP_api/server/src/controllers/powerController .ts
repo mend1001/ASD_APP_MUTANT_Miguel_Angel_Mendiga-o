@@ -8,7 +8,7 @@ class PowerController {
 
     public async list(req: Request, res: Response): Promise<void> {
         try{
-        const power = await pool.query('SELECT *  FROM  asd_prueba.t_poder AS pod GROUP BY mut.mutid ');
+        const power = await pool.query('SELECT *  FROM  asd_prueba.t_poder AS pod GROUP BY pod.podid ');
         res.json(power);
         }
         catch(e) {
@@ -20,7 +20,7 @@ class PowerController {
     public async getOne(req: Request, res: Response): Promise<any> {
         try{
         const { podid } = req.params;
-        const power = await pool.query('SELECT *  FROM  asd_prueba.t_poder AS pod  WHERE pod.podid = ?   GROUP BY mut.mutid', [podid]);
+        const power = await pool.query('SELECT *  FROM  asd_prueba.t_poder AS pod  WHERE pod.podid = ?   GROUP BY pod.podid', [podid]);
         console.log(power.length);
         if (power.length > 0) {
             res.status(500).json({ text: "Please fill current field" });

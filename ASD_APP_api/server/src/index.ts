@@ -27,8 +27,8 @@ class Server {
     routes(): void {
         this.app.use('/', indexRoutes);
         this.app.use('/api/mutant', mutantRoutes);
-        this.app.use('/api/mutant/power', powerRoutes);
-        this.app.use('/api/mutant/vehicle', vehicleRoutes);
+        this.app.use('/api/power', powerRoutes);
+        this.app.use('/api/vehicle', vehicleRoutes);
     }
 
     start() {
