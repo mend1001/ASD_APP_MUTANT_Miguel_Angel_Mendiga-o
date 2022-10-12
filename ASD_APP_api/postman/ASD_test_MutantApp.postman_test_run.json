@@ -1,0 +1,304 @@
+{
+	"id": "0e4430b6-cc01-410b-99de-018e20fb8a91",
+	"name": "ASD_test_MutantApp",
+	"timestamp": "2022-10-12T02:31:26.491Z",
+	"collection_id": "0-25091800-7996-4676-bfd2-9d17260199c3",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 0,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "a68fd5e8-6265-4ee9-95e2-8e807c1e6a5e",
+			"name": "listMutants",
+			"url": "http://localhost:3000/api/mutant/",
+			"time": 62,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				62
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "c1c3987b-bdf4-40d6-bc2a-ab88c9cf4151",
+			"name": "getMutant",
+			"url": "http://localhost:3000/api/mutant/5",
+			"time": 21,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				21
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "52a82d84-e1b2-4eeb-ab88-bf325c440a23",
+			"name": "deleteMutant",
+			"url": "http://localhost:3000/api/mutant/5",
+			"time": 20,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				20
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "62dcb010-24b9-404d-98b1-8e3c157d5cc7",
+			"name": "createMutant",
+			"url": "http://localhost:3000/api/mutant/",
+			"time": 133,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				133
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "d3c36c9f-b55b-426b-a3e0-d484bec48bb2",
+			"name": "survivedMutant",
+			"url": "http://localhost:3000/api/vehicle/saved/1",
+			"time": 53,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				53
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "94c5cb30-cb6c-4e36-9a5c-1830b37c70b9",
+			"name": "listVehicle",
+			"url": "http://localhost:3000/api/vehicle/",
+			"time": 33,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				33
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "ef4bdf5e-6795-4478-b22c-3d9e3090142a",
+			"name": "getVehicle",
+			"url": "http://localhost:3000/api/vehicle/5",
+			"time": 37,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				37
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "d3c4d2b3-dcfc-44e5-b1bd-37330ebacfe5",
+			"name": "deleteVehicle",
+			"url": "http://localhost:3000/api/vehicle/1",
+			"time": 342,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				342
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "c8f930dd-f862-4258-bf3c-1f0b651371d0",
+			"name": "survivedVehicle",
+			"url": "http://localhost:3000/api/mutant/5",
+			"time": 25,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				25
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "70741b41-4173-4d8f-86dc-5c720b529388",
+			"name": "createVehicle",
+			"url": "http://localhost:3000/api/vehicle/",
+			"time": 74,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				74
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "8a8d03de-f28f-4ee9-acfa-a006426a1a43",
+			"name": "listPower",
+			"url": "http://localhost:3000/api/power/",
+			"time": 111,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				111
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "75c3c173-a201-49b7-b37f-952a77b69cb5",
+			"name": "getPower",
+			"url": "http://localhost:3000/api/power/5",
+			"time": 48,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				48
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "36cb244b-b28a-4acb-9aeb-43da49a33e4c",
+			"name": "createPowerByMutant",
+			"url": "http://localhost:3000/api/power/",
+			"time": 256,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				256
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 1215,
+	"collection": {
+		"requests": [
+			{
+				"id": "a68fd5e8-6265-4ee9-95e2-8e807c1e6a5e",
+				"method": "GET"
+			},
+			{
+				"id": "c1c3987b-bdf4-40d6-bc2a-ab88c9cf4151",
+				"method": "GET"
+			},
+			{
+				"id": "52a82d84-e1b2-4eeb-ab88-bf325c440a23",
+				"method": "DELETE"
+			},
+			{
+				"id": "62dcb010-24b9-404d-98b1-8e3c157d5cc7",
+				"method": "POST"
+			},
+			{
+				"id": "d3c36c9f-b55b-426b-a3e0-d484bec48bb2",
+				"method": "DELETE"
+			},
+			{
+				"id": "94c5cb30-cb6c-4e36-9a5c-1830b37c70b9",
+				"method": "GET"
+			},
+			{
+				"id": "ef4bdf5e-6795-4478-b22c-3d9e3090142a",
+				"method": "GET"
+			},
+			{
+				"id": "d3c4d2b3-dcfc-44e5-b1bd-37330ebacfe5",
+				"method": "DELETE"
+			},
+			{
+				"id": "c8f930dd-f862-4258-bf3c-1f0b651371d0",
+				"method": "DELETE"
+			},
+			{
+				"id": "70741b41-4173-4d8f-86dc-5c720b529388",
+				"method": "POST"
+			},
+			{
+				"id": "8a8d03de-f28f-4ee9-acfa-a006426a1a43",
+				"method": "GET"
+			},
+			{
+				"id": "75c3c173-a201-49b7-b37f-952a77b69cb5",
+				"method": "GET"
+			},
+			{
+				"id": "36cb244b-b28a-4acb-9aeb-43da49a33e4c",
+				"method": "POST"
+			}
+		]
+	}
+}

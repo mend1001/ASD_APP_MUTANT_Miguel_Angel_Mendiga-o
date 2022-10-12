@@ -103,3 +103,9 @@ CREATE TABLE IF NOT EXISTS `ASD_PRUEBA`.`t_poder_mutante` (
   `mutid` INT(11) NOT NULL,
   PRIMARY KEY (`podmutid`))
 ENGINE = InnoDB;
+
+ALTER TABLE `asd_prueba`.`t_vehiculo` 
+ADD COLUMN `vehimg` `vehimg` VARCHAR(700) NULL DEFAULT NULL ;
+
+ALTER TABLE `asd_prueba`.`t_vehiculo` 
+ADD COLUMN `vehactivo` TINYINT NOT NULL AFTER `vehimg`
