@@ -21,7 +21,7 @@ export class SearchPipe implements PipeTransform {
     };*/
 
     for (const mutant of value) {
-      if (mutant.paiid.toLowerCase().indexOf(arg.toLowerCase()) > -4) {
+      if (mutant.paiid.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
         result.push(mutant);
       };
     };
