@@ -15,7 +15,8 @@ import { MutantsService } from './services/mutants-service/mutants.service';
     AppComponent,
     NavigationComponent,
     MutantsListComponent,
-    MutantFormComponent
+    MutantFormComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

@@ -13,13 +13,13 @@ import { MutantsService } from 'src/app/services/mutants-service/mutants.service
 export class MutantsListComponent implements OnInit {
 
   @HostBinding('class') classes = 'row';
-  mutant: Mutant[] = [];
+
   mutants: any = [];
   mutant$!: Observable<Mutant[]>;
 	filter = new FormControl('');
   showInactives = true;
   constructor(private mutantsService: MutantsService) { }
-
+  searchMutant = '';
 
   ngOnInit() {
     this.getMutants();

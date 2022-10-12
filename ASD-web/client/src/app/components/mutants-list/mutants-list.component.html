@@ -4,13 +4,13 @@
       <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
         <label for="table-filtering-search" class="col-12 col-sm-3">Filtrar Por:</label>
         <div class="col-12 col-sm-9">
-          <input id="table-filtering-search" class="form-control" type="text" >
+          <input id="table-filtering-search" class="form-control" type="text" name="searchMutant" placeholder="Buscar por nombre, alias o país..." [(ngModel)]="searchMutant">
         </div>
       </div>
     </div>
   </form>
   </div>
-  <div  class="col-md-6" *ngFor="let mutant of  mutants ">
+  <div  class="col-md-6" *ngFor="let mutant of  mutants | search : searchMutant ">
     <div id="card" class="card text-center" >
       <div
         class="card-header bg-dark text-white d-flex justify-content-between align-items-center"
@@ -28,6 +28,8 @@
       </div>
       <div>
         <p id="title">{{ mutant.mutapodo }}</p>
+
+        <p id="title">{{ mutant.paiid }}</p>
       </div>
       <div class="contenedor">
         <a href="#">
@@ -50,7 +52,6 @@
       <div class="card-body">
         <p>{{ mutant.rolid }}</p>
         <p>Poderes:{{ mutant.podmutid }}</p>
-        <p>Pais de origen:{{ mutant.paiid }}</p>
         <p>Tiene vehiculo:{{ mutant.vehid }}</p>
         <a
           [routerLink]="['/mutant/edit', mutant.mutid]"
