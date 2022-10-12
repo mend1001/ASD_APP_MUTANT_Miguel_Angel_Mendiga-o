@@ -20,14 +20,16 @@ class VehicleController {
     public async getOne(req: Request, res: Response): Promise<any> {
         try{
         const { vehid } = req.params;
-        const vehicle = await pool.query('SELECT * FROM  asd_prueba.t_vehiculo AS veh WHERE veh.vehid = ?   GROUP BY veh.vehid ', [vehid]);
+        const vehicle = await pool.query('SELECT * FROM  asd_prueba.t_vehiculo AS veh WHERE veh.vehid = ? ', [vehid]);
         console.log(vehicle.length);
         if (vehicle.length > 0) {
-            res.status(500).json({ text: "Please fill current field" });
+            
             return res.json(vehicle[0]);
         }
         handleHttp(res, 'ERROR_FIND_ITEMS');
     }catch(e) {
+        res.status(500).json({ text: "Please fill current field" });
+            
         handleHttp(res, 'ERROR_FIND_ITEMS');
         }
     }
@@ -64,6 +66,18 @@ class VehicleController {
         try{
         const { vehid } = req.params;
         await pool.query("UPDATE asd_prueba.t_vehiculo SET t_vehiculo.vehactivo = '0' WHERE vehid = ?", [vehid]);
+        res.json({ message: "The vehicle was deleted" });
+    }
+    catch(e) {
+        res.status(500).json({ text: "Please fill current field" });
+        handleHttp(res, 'ERROR_FIND_ITEMS');
+    }
+            
+    }
+    public async survived(req: Request, res: Response): Promise<void> {
+        try{
+        const { vehid } = req.params;
+        await pool.query("UPDATE asd_prueba.t_vehiculo SET t_vehiculo.vehactivo = '1' WHERE vehid = ?", [vehid]);
         res.json({ message: "The vehicle was deleted" });
     }
     catch(e) {

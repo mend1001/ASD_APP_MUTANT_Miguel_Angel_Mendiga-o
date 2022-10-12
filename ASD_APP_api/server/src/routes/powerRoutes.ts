@@ -1,5 +1,5 @@
 import express, { Router } from 'express';
-import powerController from '../controllers/powerController ';
+import powerController from '../controllers/powerController';
 
 
 
@@ -12,10 +12,10 @@ class PowerRoutes {
     }
 
     config() {
-        this.router.get('/power', powerController.list);
-        this.router.get('/power/:podid', powerController.getOne);
-        this.router.post('/power/', powerController.createPowerMutant);
-        this.router.put('/power:podid', powerController.update);
+        this.router.get('/', powerController.list);
+        this.router.get('/:podid', powerController.getOne);
+        this.router.post('/', powerController.createPowerMutant);
+        this.router.put('/:podid', powerController.update);
     }
 
 }
