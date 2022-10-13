@@ -12,24 +12,75 @@
           <input type="text" name="mutnom" [(ngModel)]="mutant.mutnom" placeholder="Nombre" class="form-control" autofocus required="">
         </div>
         <div class="form-group">
-          <input type="text" name="rolid" [(ngModel)]="mutant.rolid" placeholder="Rol" class="form-control" autofocus>
+          <div class="btn-group btn-success btn-block">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              Rol.
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><button class="dropdown-item" type="button">Libre</button></li>
+              <li><button class="dropdown-item" type="button">Capturado</button></li>
+              <li><button class="dropdown-item" type="button">Indeterminado</button></li>
+            </ul>
+          </div>
         </div>
         <div class="form-group">
-          <input type="text" name="vehid" [(ngModel)]="mutant.vehid" placeholder="Vehiculo" class="form-control" autofocus>
+
+          <div class="btn-group btn-success btn-block">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              Vehiculo
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><button class="dropdown-item" type="button">Libre</button></li>
+              <li><button class="dropdown-item" type="button">Capturado</button></li>
+              <li><button class="dropdown-item" type="button">Indeterminado</button></li>
+            </ul>
+          </div>
+
         </div>
         <div class="form-group">
-          <input type="text" name="conid" [(ngModel)]="mutant.conid" placeholder="Esta libre" class="form-control" autofocus>
+          <div class="btn-group btn-success btn-block">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              Condicion.
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><button class="dropdown-item" type="button">Libre</button></li>
+              <li><button class="dropdown-item" type="button">Capturado</button></li>
+              <li><button class="dropdown-item" type="button">Indeterminado</button></li>
+            </ul>
+          </div>
         </div>
+
         <div class="form-group">
-          <input type="text" name="paiid" [(ngModel)]="mutant.paiid" placeholder="Pais de origen" class="form-control" autofocus>
+          <div class="btn-group btn-success btn-block">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              País de origen
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><button class="dropdown-item" type="button">Action</button></li>
+              <li><button class="dropdown-item" type="button">Another action</button></li>
+              <li><button class="dropdown-item" type="button">Something else here</button></li>
+            </ul>
+          </div>
         </div>
-        <div class="form-group">
-          <input type="text" name="podmutid" [(ngModel)]="mutant.podmutid" placeholder="Poderes" class="form-control" autofocus>
+
+        <div class="input-group mb-3">
+          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Poderes</button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" >Action</a></li>
+            <li><a class="dropdown-item">Another action</a></li>
+            <li><a class="dropdown-item">Something else here</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Separated link</a></li>
+          </ul>
+          <input type="text" class="form-control" aria-label="Text input with dropdown button">
         </div>
 
         <div class="form-group">
           <input type="url" name="mutimg" [(ngModel)]="mutant.mutimg" placeholder="Image" class="form-control">
         </div>
+
+
+
         <button class="btn btn-success btn-block" (click)="edit ? updateMutant() : saveNewMutant()">
           Registrar
         </button>

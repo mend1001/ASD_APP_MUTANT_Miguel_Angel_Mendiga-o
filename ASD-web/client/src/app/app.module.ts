@@ -9,6 +9,8 @@ import { SearchPipe } from './pipes/search.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { MutantsService } from './services/mutants-service/mutants.service';
+import { PoderesListComponent } from './components/poderes-list/poderes-list.component';
+
 
 @NgModule({
   declarations: [
@@ -16,13 +18,15 @@ import { MutantsService } from './services/mutants-service/mutants.service';
     NavigationComponent,
     MutantsListComponent,
     MutantFormComponent,
-    SearchPipe
+    SearchPipe,
+    PoderesListComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule
+
   ],
   providers: [
     MutantsService
