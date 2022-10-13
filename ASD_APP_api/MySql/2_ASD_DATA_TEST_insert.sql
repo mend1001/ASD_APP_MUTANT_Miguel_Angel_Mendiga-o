@@ -494,3 +494,9 @@ INSERT INTO `asd_prueba`.`t_poder_mutante` (`podid`, `mutid`) VALUES ('19', '102
 INSERT INTO `asd_prueba`.`t_poder_mutante` (`podid`, `mutid`) VALUES ('20', '108');
 INSERT INTO `asd_prueba`.`t_poder_mutante` (`podid`, `mutid`) VALUES ('20', '109');
 INSERT INTO `asd_prueba`.`t_poder_mutante` (`podid`, `mutid`) VALUES ('20', '110');
+UPDATE `asd_prueba`.`t_vehiculo` SET `vehnom` = 'Pajaro negro', `vehimg` = 'https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/hc_1440x810/public/media/image/2019/02/X-Men-Blackbird1.jpg?itok=VdY2_Nh1' WHERE (`vehid` = '2');
+UPDATE `asd_prueba`.`t_vehiculo` SET `vehimg` = 'https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/hc_1440x810/public/media/image/2013/02/210781-bryan-singer-muestra-sillas-profesor-xavier.jpg?itok=65FdMpNR' WHERE (`vehid` = '1');
+UPDATE `asd_prueba`.`t_vehiculo` SET `vehdescripcion` = 'El \"Blitz-Buggy\" podría alcanzar velocidades superiores a las de los jeeps militares que se construyeron en la década de 1940 (el vehículo militar blindado estadounidense promedio de ese tamaño alcanza velocidades máximas entre 40 y 56 MPH), cuyo rango superior se desconoce.', `vehimg` = 'https://static.wikia.nocookie.net/marveldatabase/images/8/8c/Namor%27s_Jeep_from_Marvel_Mystery_Comics_Vol_1_22_0001.jpg/revision/latest?cb=20110501194746' WHERE (`vehid` = '3');
+UPDATE `asd_prueba`.`t_vehiculo` SET `vehdescripcion` = 'Vehiculo a motor de dos ruedas.' WHERE (`vehid` = '5');
+UPDATE `asd_prueba`.`t_vehiculo` SET `vehdescripcion` = 'No usa vehiculo,(N/A)', `vehimg` = 'https://supercurioso.com/wp-content/uploads/2016/01/supervelocidad.jpg' WHERE (`vehid` = '4');
+UPDATE `asd_prueba`.`t_vehiculo` SET `vehimg` = 'https://cmro.travis-starnes.com/images/equipment/blitz-buggy.jpg' WHERE (`vehid` = '3');

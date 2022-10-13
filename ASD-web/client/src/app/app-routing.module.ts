@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MutantsListComponent } from './components/mutants-list/mutants-list.component';
 import { MutantFormComponent } from './components/mutant-form/mutant-form.component';
+import { VehicleFormComponent } from './components/vehicle-form/vehicle-form.component';
+import { VehiclesListComponent } from './components/vehicles-list/vehicles-list.component';
 
 const routes: Routes = [
   {
@@ -20,6 +22,19 @@ const routes: Routes = [
   {
     path: 'mutant/edit/:mutid',
     component: MutantFormComponent
+  }
+  ,
+  {
+    path: 'vehicle',
+    component: VehiclesListComponent
+  },
+  {
+    path: 'vehicle/add',
+    component: VehicleFormComponent
+  },
+  {
+    path: 'vehicle/edit/:vehid',
+    component: VehicleFormComponent
   }
 ];
 

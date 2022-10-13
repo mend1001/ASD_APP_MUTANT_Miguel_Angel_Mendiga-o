@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PoderesListComponent } from './poderes-list.component';
+import { PowersListComponent } from './powers-list.component';
 
-describe('PoderesListComponent', () => {
-  let component: PoderesListComponent;
-  let fixture: ComponentFixture<PoderesListComponent>;
+describe('PowersListComponent', () => {
+  let component: PowersListComponent;
+  let fixture: ComponentFixture<PowersListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PoderesListComponent ]
+      declarations: [ PowersListComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PoderesListComponent);
+    fixture = TestBed.createComponent(PowersListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
