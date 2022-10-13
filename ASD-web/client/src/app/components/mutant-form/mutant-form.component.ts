@@ -69,5 +69,8 @@ export class MutantFormComponent implements OnInit {
         err => console.error(err)
       )
   }
+  list(){
+    this.router.navigate(['/mutant']);
+  }
 
 }

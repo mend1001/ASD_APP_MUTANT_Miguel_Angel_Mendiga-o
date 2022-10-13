@@ -1,4 +1,4 @@
-<div class="col-md-4 offset-md-2">
+<div id = "cardM" class="col-md-4 offset-md-2">
   <div class="card">
     <div class="card-body">
       <form action="">
@@ -6,10 +6,10 @@
           <input type="text" name="mutactivo" [(ngModel)]="mutant.mutactivo" placeholder="activo" class="form-control" autofocus>
         </div>
         <div class="form-group">
-          <input type="text" name="mutapodo" [(ngModel)]="mutant.mutapodo" placeholder="Alias" class="form-control" autofocus>
+          <input type="text" name="mutapodo" [(ngModel)]="mutant.mutapodo" placeholder="Alias" class="form-control" autofocus required="">
         </div>
         <div class="form-group">
-          <input type="text" name="mutnom" [(ngModel)]="mutant.mutnom" placeholder="Nombre" class="form-control" autofocus>
+          <input type="text" name="mutnom" [(ngModel)]="mutant.mutnom" placeholder="Nombre" class="form-control" autofocus required="">
         </div>
         <div class="form-group">
           <input type="text" name="rolid" [(ngModel)]="mutant.rolid" placeholder="Rol" class="form-control" autofocus>
@@ -33,9 +33,9 @@
         <button class="btn btn-success btn-block" (click)="edit ? updateMutant() : saveNewMutant()">
           Registrar
         </button>
-        <div id="title" class="form-group">
-          <a id="link"  class="nav-link" routerLink="/mutant" routerLinkActive="active" >CANCELAR</a>
-      </div>
+        <button class="btn btn-success btn-block" (click)=" list()">
+          Cancelar
+        </button>
       </form>
     </div>
   </div>

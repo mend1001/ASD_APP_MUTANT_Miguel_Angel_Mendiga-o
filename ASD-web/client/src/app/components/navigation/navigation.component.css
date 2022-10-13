@@ -1,0 +1,16 @@
+nav{
+  background: #1b3086;
+  font-style: oblique;
+  font-size: 15pt;
+  accent-color: initial;
+  color: aliceblue;
+  background-image: url('/assets/pngegg.png');
+  background-repeat: no-repeat;
+  background-position: 10px 5px;
+
+background-size: 5%;
+}
+a{
+  font-style: oblique;
+  font-size: 20pt;
+}
