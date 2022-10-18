@@ -6,10 +6,13 @@
           <input type="text" name="vehactivo" [(ngModel)]=" vehicle.vehactivo" placeholder="Activo" class="form-control" autofocus>
         </div>
         <div class="form-group">
-          <input type="text" name="vehcodigo" (ngModel)]="vehicle.vehcodigo" placeholder="Codigo" class="form-control" autofocus required="">
+          <input type="text" name="vehcodigo" [(ngModel)]="vehicle.vehcodigo" placeholder="Codigo" class="form-control" autofocus required="">
         </div>
         <div class="form-group">
           <input type="text" name="vehnom" [(ngModel)]="vehicle.vehnom" placeholder="Nombre" class="form-control" autofocus required="">
+        </div>
+        <div class="form-group">
+          <textarea type="text" name="vehdescripcion" [(ngModel)]="vehicle.vehdescripcion" placeholder="Escribe aqui tu descripción...." class="form-control" autofocus required=""></textarea>
         </div>
 
         <div class="form-group">
