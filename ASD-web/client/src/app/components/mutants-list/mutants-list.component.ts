@@ -19,7 +19,7 @@ export class MutantsListComponent implements OnInit {
 	filter = new FormControl('');
   showInactives = true;
   constructor(private mutantsService: MutantsService) { }
-  searchMutant = '';
+  search = '';
 
   ngOnInit() {
     this.getMutants();

@@ -4,13 +4,13 @@
       <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
         <label for="table-filtering-search" class="col-12 col-sm-3">Filtrar Por:</label>
         <div class="col-12 col-sm-9">
-          <input id="table-filtering-search" class="form-control" type="text" name="searchMutant" placeholder="Buscar por nombre, alias o país..." [(ngModel)]="searchMutant">
+          <input id="table-filtering-search" class="form-control" type="text" name="search" placeholder="Buscar por nombre, alias o país..." [(ngModel)]="search">
         </div>
       </div>
     </div>
   </form>
   </div>
-  <div  class="col-md-6" *ngFor="let mutant of  mutants | search : searchMutant ">
+  <div  class="col-md-6" *ngFor="let mutant of  mutants | search : search ">
     <div id="card" class="card text-center" >
       <div
         class="card-header bg-dark text-white d-flex justify-content-between align-items-center"
