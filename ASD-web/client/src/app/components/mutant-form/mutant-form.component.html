@@ -3,51 +3,51 @@
     <div class="card-body">
       <form action="">
         <div class="form-group">
-          <input type="text" name="mutactivo" [(ngModel)]="mutant.mutactivo" placeholder="activo" class="form-control" autofocus>
+          <p>Esta vivo o muerto:</p>
+          <select class="form-select form-select-lg mb-3" aria-label="Default select example"
+          name="mutactivo" [(ngModel)]="mutant.mutactivo" >
+            <option value="1">Vivo</option>
+            <option value="0">Muerto</option>
+          </select>
         </div>
         <div class="form-group">
+          <p>Alias:</p>
           <input type="text" name="mutapodo" [(ngModel)]="mutant.mutapodo" placeholder="Alias" class="form-control" autofocus required="">
         </div>
+
         <div class="form-group">
+          <p>Nombre:</p>
           <input type="text" name="mutnom" [(ngModel)]="mutant.mutnom" placeholder="Nombre" class="form-control" autofocus required="">
         </div>
-        <div class="form-group">
-          <div class="btn-group btn-success btn-block">
-            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              Rol.
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li><button class="dropdown-item" type="button">Libre</button></li>
-              <li><button class="dropdown-item" type="button">Capturado</button></li>
-              <li><button class="dropdown-item" type="button">Indeterminado</button></li>
-            </ul>
-          </div>
-        </div>
-        <div class="form-group">
 
-          <div class="btn-group btn-success btn-block">
-            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              Vehiculo
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li><button class="dropdown-item" type="button">Libre</button></li>
-              <li><button class="dropdown-item" type="button">Capturado</button></li>
-              <li><button class="dropdown-item" type="button">Indeterminado</button></li>
-            </ul>
-          </div>
-
-        </div>
         <div class="form-group">
-          <div class="btn-group btn-success btn-block">
-            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              Condicion.
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li><button class="dropdown-item" type="button">Libre</button></li>
-              <li><button class="dropdown-item" type="button">Capturado</button></li>
-              <li><button class="dropdown-item" type="button">Indeterminado</button></li>
-            </ul>
-          </div>
+          <p>Que rol desempeña:</p>
+          <select class="form-select form-select-lg mb-3" aria-label="Default select example"
+          name="rolid" [(ngModel)]="mutant.rolid">
+            <option value="1">Heroe</option>
+            <option value="2">Villano</option>
+            <option value="3">Antiheroe</option>
+            <option value="4">Sin motivaciones</option>
+            <option value="5">Indeterminado</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <p>Condicion actual:</p>
+          <select class="form-select form-select-lg mb-3" aria-label="Default select example"
+          name="conid" [(ngModel)]="mutant.conid">
+            <option value="1">Libre</option>
+            <option value="2">Preso</option>
+            <option value="3">Indeterminado</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <p>Vehiculo:</p>
+          <select class="form-select form-select-lg mb-3" aria-label="Default select example"
+          name="vehid" [(ngModel)]="mutant.vehid">
+            <option *ngFor="let vehicle of  vehicles  " value= {{vehicle.vehid}}>{{vehicle.vehnom}}</option>
+          </select>
         </div>
 
         <div class="form-group">
@@ -95,6 +95,7 @@
 <div class="col-md-4 card">
   <div class="card card-body text-center">
   <img [src]="mutant.mutimg == '' ? '/assets/noimage.png' : mutant.mutimg" alt="No Image" class="card-img-top">
+  <h2>{{mutant.mutactivo}}</h2>
     <h2>{{mutant.mutapodo}}</h2>
     <h4>{{mutant.mutnom}}</h4>
     <p>{{mutant.rolid == '' ? 'X-men' : mutant.rolid}}</p>

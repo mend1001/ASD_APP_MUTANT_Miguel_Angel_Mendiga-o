@@ -1,7 +1,9 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { Mutant } from 'src/app/models/Mutant';
 import { MutantsService } from 'src/app/services/mutants-service/mutants.service';
+import { VehicleService } from 'src/app/services/vehicle-service/vehicle.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { Vehicle } from 'src/app/models/Vehicle';
 
 @Component({
   selector: 'app-mutant-form',
@@ -11,9 +13,10 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class MutantFormComponent implements OnInit {
 
   @HostBinding('class') clases = 'row';
+  mutants: any = [];
+  vehicles: any = [];
 
     mutant: Mutant = {
-
     mutid: 0 ,
     mutactivo: '',
     mutnom: '',
@@ -26,11 +29,20 @@ export class MutantFormComponent implements OnInit {
     mutimg: ''
   };
 
+  vehicle: Vehicle = {
+    vehid: 0 ,
+    vehnom: ''
+  };
+
   edit: boolean = false;
 
-  constructor(private mutantsService: MutantsService, private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private mutantsService: MutantsService,
+               private vehicleService: VehicleService,
+                private router: Router,
+                  private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.getVehicles();
     const params = this.activatedRoute.snapshot.params;
     if (params.mutid) {
       this.mutantsService.getMutant(params.mutid)
@@ -43,6 +55,17 @@ export class MutantFormComponent implements OnInit {
           err => console.log(err)
         )
     }
+  }
+
+  getVehicles() {
+    this.vehicleService.getVehicles()
+      .subscribe(
+        res => {
+          this.vehicles = res;
+          console.log(res);
+        },
+        err => console.error(err)
+      );
   }
 
   saveNewMutant() {
