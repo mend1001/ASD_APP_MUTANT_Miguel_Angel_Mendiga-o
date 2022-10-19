@@ -14,9 +14,9 @@ class VehicleRoutes {
         this.router.get('/', vehicleController_1.default.list);
         this.router.get('/:vehid', vehicleController_1.default.getOne);
         this.router.post('/', vehicleController_1.default.create);
-        this.router.put('/:vehid', vehicleController_1.default.update);
+        this.router.put('/vehid', vehicleController_1.default.update);
         this.router.delete('/:vehid', vehicleController_1.default.delete);
-        this.router.delete('/saved/:vehid', vehicleController_1.default.saved);
+        this.router.delete('/survived/:vehid', vehicleController_1.default.delete);
     }
 }
 exports.default = new VehicleRoutes().router;

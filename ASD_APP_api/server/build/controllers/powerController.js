@@ -14,12 +14,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = __importDefault(require("../database"));
 const error_handle_1 = require("../utils/error.handle");
-class VehicleController {
+class PowerController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const vehicle = yield database_1.default.query('SELECT * FROM asd_prueba.t_vehiculo AS veh ORDER BY veh.vehid ASC ');
-                res.json(vehicle);
+                const power = yield database_1.default.query('SELECT *  FROM  asd_prueba.t_poder AS pod');
+                res.json(power);
             }
             catch (e) {
                 res.status(500).json({ text: "Please fill current field" });
@@ -30,29 +30,29 @@ class VehicleController {
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const { vehid } = req.params;
-                const vehicle = yield database_1.default.query('SELECT * FROM  asd_prueba.t_vehiculo AS veh WHERE veh.vehid = ? ', [vehid]);
-                console.log(vehicle.length);
-                if (vehicle.length > 0) {
-                    return res.json(vehicle[0]);
+                const { podid } = req.params;
+                const power = yield database_1.default.query('SELECT *  FROM  asd_prueba.t_poder AS pod  WHERE pod.podid = ?   GROUP BY pod.podid', [podid]);
+                console.log(power.length);
+                if (power.length > 0) {
+                    res.status(500).json({ text: "Please fill current field" });
+                    return res.json(power[0]);
                 }
                 (0, error_handle_1.handleHttp)(res, 'ERROR_FIND_ITEMS');
             }
             catch (e) {
-                res.status(500).json({ text: "Please fill current field" });
                 (0, error_handle_1.handleHttp)(res, 'ERROR_FIND_ITEMS');
             }
         });
     }
-    create(req, res) {
+    createPowerMutant(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const result = yield database_1.default.query('INSERT INTO asd_prueba.t_vehiculo SET ?', [req.body]);
-                const { vehnom } = req.body;
-                if (vehnom == "") {
+                const result = yield database_1.default.query('INSERT INTO asd_prueba.t_poder_mutante SET ?', [req.body]);
+                const { podid, mutid } = req.body;
+                if (podid == "" || mutid == "") {
                     res.status(400).json({ message: "Bad Request. Please fill all field." });
                 }
-                res.json({ message: 'vehicle Saved' });
+                res.json({ message: 'Power Saved' });
             }
             catch (e) {
                 res.status(500).json({ text: "Please fill current field" });
@@ -63,36 +63,10 @@ class VehicleController {
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const { vehid } = req.params;
-                const oldVehicle = req.body;
-                yield database_1.default.query('UPDATE asd_prueba.t_vehiculo SET ? WHERE vehid = ?', [req.body, vehid]);
-                res.json({ message: "The vehicle was Updated" });
-            }
-            catch (e) {
-                res.status(500).json({ text: "Please fill current field" });
-                (0, error_handle_1.handleHttp)(res, 'ERROR_FIND_ITEMS');
-            }
-        });
-    }
-    delete(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            try {
-                const { vehid } = req.params;
-                yield database_1.default.query("UPDATE asd_prueba.t_vehiculo SET t_vehiculo.vehactivo = '0' WHERE vehid = ?", [vehid]);
-                res.json({ message: "The vehicle was deleted" });
-            }
-            catch (e) {
-                res.status(500).json({ text: "Please fill current field" });
-                (0, error_handle_1.handleHttp)(res, 'ERROR_FIND_ITEMS');
-            }
-        });
-    }
-    survived(req, res) {
-        return __awaiter(this, void 0, void 0, function* () {
-            try {
-                const { vehid } = req.params;
-                yield database_1.default.query("UPDATE asd_prueba.t_vehiculo SET t_vehiculo.vehactivo = '1' WHERE vehid = ?", [vehid]);
-                res.json({ message: "The vehicle was deleted" });
+                const { podid } = req.params;
+                const oldPower = req.body;
+                yield database_1.default.query('UPDATE asd_prueba.t_poder SET ? WHERE podid = ?', [req.body, podid]);
+                res.json({ message: "The power was Updated" });
             }
             catch (e) {
                 res.status(500).json({ text: "Please fill current field" });
@@ -101,5 +75,5 @@ class VehicleController {
         });
     }
 }
-const vehicleController = new VehicleController;
-exports.default = vehicleController;
+const powerController = new PowerController;
+exports.default = powerController;
