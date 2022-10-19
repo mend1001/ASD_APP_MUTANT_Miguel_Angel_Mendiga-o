@@ -4,6 +4,7 @@ import { MutantsListComponent } from './components/mutants-list/mutants-list.com
 import { MutantFormComponent } from './components/mutant-form/mutant-form.component';
 import { VehicleFormComponent } from './components/vehicle-form/vehicle-form.component';
 import { VehiclesListComponent } from './components/vehicles-list/vehicles-list.component';
+import { CountryListComponent } from './components/country-list/country-list.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,10 @@ const routes: Routes = [
   {
     path: 'vehicle/edit/:vehid',
     component: VehicleFormComponent
+  },
+  {
+    path: 'country',
+    component: CountryListComponent
   }
 ];
 

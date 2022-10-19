@@ -18,6 +18,8 @@ import { VehicleService } from './services/vehicle-service/vehicle.service';
 import { SearchVehiclePipe } from './pipes/search-vehicle.pipe';
 import { SearchPipe } from './pipes/search.pipe';
 import { PowerService } from './services/power-service/power.service';
+import { CountryListComponent } from './components/country-list/country-list.component';
+import { CountryService } from './services/country-service/country-service.service';
 
 
 
@@ -31,7 +33,8 @@ import { PowerService } from './services/power-service/power.service';
     VehicleFormComponent,
     PowersListComponent,
     SearchPipe,
-    SearchVehiclePipe
+    SearchVehiclePipe,
+    CountryListComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,8 @@ import { PowerService } from './services/power-service/power.service';
   providers: [
     PowerService,
     MutantsService,
-    VehicleService
+    VehicleService,
+    CountryService
   ],
   bootstrap: [AppComponent]
 })
