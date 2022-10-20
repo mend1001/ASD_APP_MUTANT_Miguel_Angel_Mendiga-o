@@ -15,6 +15,21 @@
             <option value="0">Muerto</option>
           </select>
         </div>
+
+        <div class="form-group">
+          <p>ID:</p>
+          <input
+          id="mutid"
+            type= "number"
+            name="mutid"
+            [(ngModel)]="mutant.mutid"
+            placeholder="ID"
+            class="form-control"
+            autofocus
+            required=""
+          />
+        </div>
+
         <div class="form-group">
           <p>Alias:</p>
           <input
@@ -108,24 +123,8 @@
           </div>
         </div>
 
-        <div class="form-group">
-          <p>Poderes:</p>
-          <div>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              Registrar poderes.
-            </button>
 
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                   <app-create-power-by-mutant></app-create-power-by-mutant>
-                </div>
-              </div>
-            </div>
 
-           </div>
-        </div>
 
         <div class="form-group">
           <p>Imagen:</p>
@@ -138,14 +137,8 @@
           />
         </div>
 
-        <div class="form-group">
 
-
-
-
-        </div>
-
-        <button class="btn btn-success btn-block" (click)="saveNewMutant() ">
+        <button class="btn btn-success btn-block" (click)="edit ? updateMutant() : saveNewMutant()">
           Registrar
         </button>
         <button class="btn btn-success btn-block" (click)="list()">
@@ -155,6 +148,7 @@
     </div>
   </div>
 </div>
+
 
 <div class="col-md-4 card">
   <div class="card card-body text-center">
@@ -169,5 +163,41 @@
     <p>{{ mutant.rolid == "" ? "X-men" : mutant.rolid }}</p>
     <p>{{ mutant.paiid }}</p>
     <p>{{ mutant.podmutid }}</p>
+    <div>
+      <select
+    id="powerSelect"
+      class="form-select form-select-lg mb-3"
+      name="podid"
+      [(ngModel)]="power.podid"
+
+    >
+      <option *ngFor="let power of powers" value="{{ power.podid }}">
+        {{ power.podtipo }}
+      </option>
+    </select>
+
+    <select
+      class="form-select form-select-lg mb-3"
+      name="podid"
+      size="1"
+      [(ngModel)]="power.podid"
+    >
+      <option *ngFor="let power of powers" value="{{ power.podid }}">
+        {{ power.poddescripcion }}
+      </option>
+    </select>
+
+    <div class="col-md-12 card">
+      <div class="card card-body text-center">
+        <h3>ID: {{ power.podid }}</h3>
+
+      </div>
+    </div>
+
+      <button class="btn btn-success btn-block" (click)="powerEdited()">
+        Editar poderes
+      </button>
+    </div>
+
   </div>
 </div>

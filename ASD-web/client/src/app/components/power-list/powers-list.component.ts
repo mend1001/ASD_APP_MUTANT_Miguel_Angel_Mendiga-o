@@ -37,8 +37,8 @@ export class PowersListComponent implements OnInit {
       );
   }
 
-  deletePower(vehid: string) {
-    this.powerService.deletePower(vehid)
+  delete(vehid: string) {
+    this.powerService.delete(vehid)
       .subscribe(
         res => {
           console.log(res);

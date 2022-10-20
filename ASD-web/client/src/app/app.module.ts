@@ -22,6 +22,7 @@ import { CountryListComponent } from './components/country-list/country-list.com
 import { CountryService } from './services/country-service/country-service.service';
 import { EditPowerComponent } from './modal/edit-power/edit-power.component';
 import { CreatePowerByMutantComponent } from './modal/create-power-by-mutant/create-power-by-mutant.component';
+import { EditMutantComponent } from './components/edit-mutant/edit-mutant.component';
 
 
 
@@ -38,7 +39,8 @@ import { CreatePowerByMutantComponent } from './modal/create-power-by-mutant/cre
     SearchVehiclePipe,
     CountryListComponent,
     EditPowerComponent,
-    CreatePowerByMutantComponent
+    CreatePowerByMutantComponent,
+    EditMutantComponent
   ],
   imports: [
     BrowserModule,

@@ -19,7 +19,7 @@ export class PowerService {
     return this.http.get(`${this.API_URI}/power/${powid}`);
   }
 
-  deletePower(mutid: string) {
+  delete(mutid: string) {
     return this.http.delete(`${this.API_URI}/power/${mutid}`);
   }
   createPowerMutant(powerByMutant: PowerByMutant) {

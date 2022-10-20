@@ -7,6 +7,7 @@ import { VehiclesListComponent } from './components/vehicles-list/vehicles-list.
 import { CountryListComponent } from './components/country-list/country-list.component';
 import { CreatePowerByMutantComponent } from './modal/create-power-by-mutant/create-power-by-mutant.component';
 import { PowersListComponent } from './components/power-list/powers-list.component';
+import { EditMutantComponent } from './components/edit-mutant/edit-mutant.component';
 
 const routes: Routes = [
   {
@@ -24,7 +25,7 @@ const routes: Routes = [
   },
   {
     path: 'mutant/edit/:mutid',
-    component: MutantFormComponent
+    component: EditMutantComponent
   }
   ,
   {

@@ -34,7 +34,7 @@ class MutantController {
                 const mutant = yield database_1.default.query('SELECT mut.mutid ,mut.mutactivo, mut.mutapodo, mut.mutnom, rol.rolafinidad AS "rolid", CONCAT(veh.vehnom," (",veh.vehcodigo,")") AS "vehid",con.connom AS "conid", CONCAT(pai.painom," (",pai.paicod,")") AS "paiid", GROUP_CONCAT(pod.podtipo) AS "podmutid", mut.mutimg   FROM  asd_prueba.t_mutantes AS mut  LEFT JOIN asd_prueba.t_rol AS rol ON mut.rolid = rol.rolid  LEFT JOIN asd_prueba.t_vehiculo AS veh ON mut.vehid = veh.vehid  LEFT JOIN asd_prueba.t_condicion AS con ON mut.conid = con.conid  LEFT JOIN asd_prueba.t_pais AS pai ON mut.paiid = pai.paiid  left join  asd_prueba.t_poder_mutante AS pmu ON mut.mutid = pmu.mutid left join asd_prueba.t_poder AS pod ON pmu.podid = pod.podid  WHERE mut.mutid = ?   GROUP BY mut.mutid ', [mutid]);
                 console.log(mutant.length);
                 if (mutant.length > 0) {
-                    res.status(500).json({ text: "Please fill current field" });
+                    
                     return res.json(mutant[0]);
                 }
                 (0, error_handle_1.handleHttp)(res, 'ERROR_FIND_ITEMS');
