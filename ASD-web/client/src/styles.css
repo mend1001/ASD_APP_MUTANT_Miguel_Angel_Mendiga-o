@@ -1,11 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
 body {
-  background: #b3bad6;
-  background-image: url('/assets/xmenlogo.png');
+  background: #3357e9;
+  background-image: url('/assets/pngegg.png');
   background-repeat: no-repeat;
-  background-position: 1500px 520px;
+  background-position: 100px 600px;
   background-attachment: fixed;
-background-size: 15%;
+background-size: 18%;
 }
+
 

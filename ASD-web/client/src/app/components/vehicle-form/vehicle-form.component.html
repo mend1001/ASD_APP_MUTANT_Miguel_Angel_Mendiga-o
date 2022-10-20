@@ -1,21 +1,39 @@
 <div id = "cardM" class="col-md-4 offset-md-2">
   <div class="card">
+    <div class="card-header">
+      <h3>Registrar vehiculo.</h3>
+    </div>
     <div class="card-body">
       <form action="">
         <div class="form-group">
-          <input type="text" name="vehactivo" [(ngModel)]=" vehicle.vehactivo" placeholder="Activo" class="form-control" autofocus>
+          <p>¿ Esta destruido ?</p>
+          <select
+            class="form-select form-select-lg mb-3"
+            aria-label="Default select example"
+            name="vehactivo"
+            [(ngModel)]="vehicle.vehactivo"
+            required=""
+          >
+            <option value="1">Funcionando</option>
+            <option value="0">Destruido</option>
+          </select>
         </div>
+
         <div class="form-group">
+          <p>Codigo:</p>
           <input type="text" name="vehcodigo" [(ngModel)]="vehicle.vehcodigo" placeholder="Codigo" class="form-control" autofocus required="">
         </div>
         <div class="form-group">
+          <p>Nombre:</p>
           <input type="text" name="vehnom" [(ngModel)]="vehicle.vehnom" placeholder="Nombre" class="form-control" autofocus required="">
         </div>
         <div class="form-group">
+          <p>Descripción:</p>
           <textarea type="text" name="vehdescripcion" [(ngModel)]="vehicle.vehdescripcion" placeholder="Escribe aqui tu descripción...." class="form-control" autofocus required=""></textarea>
         </div>
 
         <div class="form-group">
+          <p>Imagen:</p>
           <input type="url" name="vehimg" [(ngModel)]="vehicle.vehimg" placeholder="Image" class="form-control">
         </div>
 
@@ -32,7 +50,7 @@
   </div>
 </div>
 
-<div class="col-md-4 card">
+<div id="cardM" class="col-md-4 card">
   <div class="card card-body text-center">
   <img [src]="vehicle.vehimg == '' ? '/assets/noimage.png' : vehicle.vehimg" alt="No Image" class="card-img-top">
     <h2>{{vehicle.vehnom}}</h2>

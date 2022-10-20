@@ -1,6 +1,13 @@
 <div class="modal-content">
   <div class="modal-header">
-    <h5 class="modal-title" id="exampleModalLabel">Registrar poderes.</h5>
+    <h3 class="modal-title" id="exampleModalLabel">Registrar poderes.</h3>
+    <div>
+      <h5>Seleccione todos los poderes que posea el mutante de la siguiente forma:</h5>
+      <p>- Seleccione el poder por tipo o por descripción </p>
+      <p>- Oprima el boton "Agregar". </p>
+      <p>- Repita el proceso con todos los poderes deseados. </p>
+      <p>- Cuando seleccione todos los poderes seleccione "Salir". </p>
+    </div>
     <button
       type="button"
       class="btn-close"
@@ -9,7 +16,7 @@
     ></button>
   </div>
   <div class="modal-body">
-
+    <h5>Selección de poder por nombre:</h5>
     <select
     id="powerSelect"
       class="form-select form-select-lg mb-3"
@@ -21,7 +28,7 @@
         {{ power.podtipo }}
       </option>
     </select>
-
+    <h5>Selección de poder por su descripción:</h5>
     <select
       class="form-select form-select-lg mb-3"
       name="podid"
@@ -42,8 +49,8 @@
   </div>
   <div class="modal-footer">
     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >
-      Close
+      Salir
     </button>
-    <button type="button" class="btn btn-primary" (click)="powerRegister()">Poder agregado</button>
+    <button type="button" class="btn btn-primary" (click)="powerRegister()">Agregar</button>
   </div>
 </div>
