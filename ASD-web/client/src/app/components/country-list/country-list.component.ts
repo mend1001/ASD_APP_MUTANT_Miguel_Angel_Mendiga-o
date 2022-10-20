@@ -1,6 +1,5 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { Country } from 'src/app/models/Country';
-import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { CountryService } from 'src/app/services/country-service/country-service.service';
 

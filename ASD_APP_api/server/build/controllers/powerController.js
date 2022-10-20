@@ -74,6 +74,19 @@ class PowerController {
             }
         });
     }
+    delete(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const { mutid } = req.params;
+                yield database_1.default.query("DELETE FROM asd_prueba.t_poder_mutante WHERE mutid = ?", [mutid]);
+                res.json({ message: "The powers was deleted" });
+            }
+            catch (e) {
+                res.status(500).json({ text: "Please fill current field" });
+                (0, error_handle_1.handleHttp)(res, 'ERROR_FIND_ITEMS');
+            }
+        });
+    }
 }
 const powerController = new PowerController;
 exports.default = powerController;

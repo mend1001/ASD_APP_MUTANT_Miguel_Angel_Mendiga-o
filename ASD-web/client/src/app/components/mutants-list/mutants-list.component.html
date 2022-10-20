@@ -53,12 +53,9 @@
         <p>{{ mutant.rolid }}</p>
         <p>Poderes:{{ mutant.podmutid }}</p>
         <p>Tiene vehiculo:{{ mutant.vehid }}</p>
-        <a
-          [routerLink]="['/mutant/edit', mutant.mutid]"
-          class="btn btn-info btn-block"
-        >
-          EDITAR
-        </a>
+        <button class="btn btn-success btn-block" (click)="updateMutant()">
+          Editar
+        </button>
       </div>
     </div>
   </div>

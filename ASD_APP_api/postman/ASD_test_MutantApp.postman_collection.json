@@ -120,6 +120,36 @@
 					"response": []
 				},
 				{
+					"name": "editMutant",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mutactivo\": 1,\n    \"mutapodo\": \"Coloso \",\n    \"mutnom\": \"Piotr Peter Nikolaievitch Rasputin\",\n    \"rolid\": 1,\n    \"vehid\": 2,\n    \"conid\": 1,\n    \"paiid\": 69,\n    \"podmutid\": 52,\n    \"mutimg\": \"https://dam.smashmexico.com.mx/wp-content/uploads/2020/03/deadpool-coloso-768x512.jpg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/mutant/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"mutant",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "survivedMutant",
 					"request": {
 						"method": "DELETE",
@@ -277,6 +307,36 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "editVehicle",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"vehnom\": \"Silla de ruedas\",\n    \"vehdescripcion\": \"El usuario define la dirección con la meditación. Si uno empieza a relajar los músculos y respirar profundamente, se entra en un estado de meditación. Y cuando suben los niveles de concentración, empieza a avanzar la silla\",\n    \"vehcodigo\": \"VCH\",\n    \"vehimg\": null,\n    \"vehactivo\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/vehicle/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"vehicle",
+								"1"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -367,6 +427,32 @@
 							"path": [
 								"api",
 								"power",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "countryQuery",
+			"item": [
+				{
+					"name": "listCountry",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/country/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"country",
 								""
 							]
 						}

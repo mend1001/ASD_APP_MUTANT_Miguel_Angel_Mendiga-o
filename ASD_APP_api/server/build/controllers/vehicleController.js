@@ -55,8 +55,7 @@ class VehicleController {
                 res.json({ message: 'vehicle Saved' });
             }
             catch (e) {
-                res.status(500).json({ text: "Please fill current field" });
-                (0, error_handle_1.handleHttp)(res, 'ERROR_FIND_ITEMS');
+                (res, 'ERROR_FIND_ITEMS');
             }
         });
     }
@@ -87,12 +86,12 @@ class VehicleController {
             }
         });
     }
-    survived(req, res) {
+    saved(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const { vehid } = req.params;
                 yield database_1.default.query("UPDATE asd_prueba.t_vehiculo SET t_vehiculo.vehactivo = '1' WHERE vehid = ?", [vehid]);
-                res.json({ message: "The vehicle was deleted" });
+                res.json({ message: "The vehicle was fixed" });
             }
             catch (e) {
                 res.status(500).json({ text: "Please fill current field" });

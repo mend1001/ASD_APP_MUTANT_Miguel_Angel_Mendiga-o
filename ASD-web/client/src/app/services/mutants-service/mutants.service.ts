@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Mutant } from 'src/app/models/Mutant';
+import { PowerByMutant } from 'src/app/models/PowerByMutant';
 import { Observable } from 'rxjs';
+import { Power } from 'src/app/models/power';
 
 @Injectable({
   providedIn: 'root'
@@ -34,5 +36,6 @@ export class MutantsService {
   updateMutant(mutid: string|number, updatedMutant: Mutant): Observable<Mutant> {
     return this.http.put(`${this.API_URI}/mutant/${mutid}`, updatedMutant);
   }
+
 
 }

@@ -5,6 +5,8 @@ import { MutantFormComponent } from './components/mutant-form/mutant-form.compon
 import { VehicleFormComponent } from './components/vehicle-form/vehicle-form.component';
 import { VehiclesListComponent } from './components/vehicles-list/vehicles-list.component';
 import { CountryListComponent } from './components/country-list/country-list.component';
+import { CreatePowerByMutantComponent } from './modal/create-power-by-mutant/create-power-by-mutant.component';
+import { PowersListComponent } from './components/power-list/powers-list.component';
 
 const routes: Routes = [
   {
@@ -40,6 +42,10 @@ const routes: Routes = [
   {
     path: 'country',
     component: CountryListComponent
+  },
+  {
+    path: 'powerModal',
+    component: CreatePowerByMutantComponent
   }
 ];
 

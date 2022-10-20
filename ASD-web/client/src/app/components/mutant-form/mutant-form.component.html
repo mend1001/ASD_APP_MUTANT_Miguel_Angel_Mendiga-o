@@ -1,29 +1,55 @@
-<div id = "cardM" class="col-md-4 offset-md-2">
+<div id="cardM" class="col-md-4 offset-md-2">
   <div class="card">
     <div class="card-body">
       <form action="">
         <div class="form-group">
           <p>Esta vivo o muerto:</p>
-          <select class="form-select form-select-lg mb-3" aria-label="Default select example"
-          name="mutactivo" [(ngModel)]="mutant.mutactivo" >
+          <select
+            class="form-select form-select-lg mb-3"
+            aria-label="Default select example"
+            name="mutactivo"
+            [(ngModel)]="mutant.mutactivo"
+            required=""
+          >
             <option value="1">Vivo</option>
             <option value="0">Muerto</option>
           </select>
         </div>
         <div class="form-group">
           <p>Alias:</p>
-          <input type="text" name="mutapodo" [(ngModel)]="mutant.mutapodo" placeholder="Alias" class="form-control" autofocus required="">
+          <input
+            type="text"
+            name="mutapodo"
+            [(ngModel)]="mutant.mutapodo"
+            placeholder="Alias"
+            class="form-control"
+            autofocus
+            required=""
+          />
         </div>
 
         <div class="form-group">
           <p>Nombre:</p>
-          <input type="text" name="mutnom" [(ngModel)]="mutant.mutnom" placeholder="Nombre" class="form-control" autofocus required="">
+          <input
+            type="text"
+            name="mutnom"
+            [(ngModel)]="mutant.mutnom"
+            placeholder="Nombre"
+            class="form-control"
+            autofocus
+            required=""
+          />
         </div>
 
         <div class="form-group">
           <p>Que rol desempeña:</p>
-          <select class="form-select form-select-lg mb-3" aria-label="Default select example"
-          name="rolid" [(ngModel)]="mutant.rolid">
+          <select
+            class="form-select form-select-lg mb-3"
+            aria-label="Default select example"
+            name="rolid"
+            [(ngModel)]="mutant.rolid"
+            required=""
+          >
             <option value="1">Heroe</option>
             <option value="2">Villano</option>
             <option value="3">Antiheroe</option>
@@ -34,8 +60,12 @@
 
         <div class="form-group">
           <p>Condicion actual:</p>
-          <select class="form-select form-select-lg mb-3" aria-label="Default select example"
-          name="conid" [(ngModel)]="mutant.conid">
+          <select
+            class="form-select form-select-lg mb-3"
+            aria-label="Default select example"
+            name="conid"
+            [(ngModel)]="mutant.conid"
+          >
             <option value="1">Libre</option>
             <option value="2">Preso</option>
             <option value="3">Indeterminado</option>
@@ -44,47 +74,80 @@
 
         <div class="form-group">
           <p>Vehiculo:</p>
-          <select class="form-select form-select-lg mb-3" aria-label="Default select example"
-          name="vehid" [(ngModel)]="mutant.vehid">
-            <option *ngFor="let vehicle of  vehicles  " value= {{vehicle.vehid}}>{{vehicle.vehnom}}</option>
+          <select
+            class="form-select form-select-lg mb-3"
+            aria-label="Default select example"
+            name="vehid"
+            [(ngModel)]="mutant.vehid"
+          >
+            <option
+              *ngFor="let vehicle of vehicles"
+              value="{{ vehicle.vehid }}"
+            >
+              {{ vehicle.vehnom }}
+            </option>
           </select>
         </div>
 
         <div class="form-group">
-          <div class="btn-group btn-success btn-block">
-            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-              País de origen
-            </button>
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li><button class="dropdown-item" type="button">Action</button></li>
-              <li><button class="dropdown-item" type="button">Another action</button></li>
-              <li><button class="dropdown-item" type="button">Something else here</button></li>
-            </ul>
+          <div class="form-group">
+            <p>Pais de origen:</p>
+            <select
+              class="form-select form-select-lg mb-3"
+              aria-label="Default select example"
+              name="paiid"
+              [(ngModel)]="mutant.paiid"
+            >
+              <option
+                *ngFor="let country of countries"
+                value="{{ country.paiid }}"
+              >
+                {{ country.painom }}
+              </option>
+            </select>
           </div>
         </div>
 
-        <div class="input-group mb-3">
-          <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Poderes</button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" >Action</a></li>
-            <li><a class="dropdown-item">Another action</a></li>
-            <li><a class="dropdown-item">Something else here</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Separated link</a></li>
-          </ul>
-          <input type="text" class="form-control" aria-label="Text input with dropdown button">
+        <div class="form-group">
+          <p>Poderes:</p>
+          <div>
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Registrar poderes.
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                   <app-create-power-by-mutant></app-create-power-by-mutant>
+                </div>
+              </div>
+            </div>
+
+           </div>
+        </div>
+        <div class="form-group">
+          <p>Imagen:</p>
+          <input
+            type="url"
+            name="mutimg"
+            [(ngModel)]="mutant.mutimg"
+            placeholder="Image"
+            class="form-control"
+          />
         </div>
 
         <div class="form-group">
-          <input type="url" name="mutimg" [(ngModel)]="mutant.mutimg" placeholder="Image" class="form-control">
+
+
+
+
         </div>
 
-
-
-        <button class="btn btn-success btn-block" (click)="edit ? updateMutant() : saveNewMutant()">
+        <button class="btn btn-success btn-block" (click)="saveNewMutant() ">
           Registrar
         </button>
-        <button class="btn btn-success btn-block" (click)=" list()">
+        <button class="btn btn-success btn-block" (click)="list()">
           Cancelar
         </button>
       </form>
@@ -94,12 +157,16 @@
 
 <div class="col-md-4 card">
   <div class="card card-body text-center">
-  <img [src]="mutant.mutimg == '' ? '/assets/noimage.png' : mutant.mutimg" alt="No Image" class="card-img-top">
-  <h2>{{mutant.mutactivo}}</h2>
-    <h2>{{mutant.mutapodo}}</h2>
-    <h4>{{mutant.mutnom}}</h4>
-    <p>{{mutant.rolid == '' ? 'X-men' : mutant.rolid}}</p>
-    <p>{{mutant.paiid }}</p>
-    <p>{{mutant.podmutid }}</p>
+    <img
+      [src]="mutant.mutimg == '' ? '/assets/noimage.png' : mutant.mutimg"
+      alt="No Image"
+      class="card-img-top"
+    />
+    <h2>{{ mutant.mutactivo }}</h2>
+    <h2>{{ mutant.mutapodo }}</h2>
+    <h4>{{ mutant.mutnom }}</h4>
+    <p>{{ mutant.rolid == "" ? "X-men" : mutant.rolid }}</p>
+    <p>{{ mutant.paiid }}</p>
+    <p>{{ mutant.podmutid }}</p>
   </div>
 </div>

@@ -48,17 +48,21 @@ class MutantController {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const result = yield database_1.default.query('INSERT INTO asd_prueba.t_mutantes SET ?', [req.body]);
-                const { mutnom, mutapodo, mutactivo, paiid, podmutid } = req.body;
-                if (mutnom == "" || mutapodo == "" || mutactivo == "" || paiid == "" || podmutid == "") {
+                const { mutnom, mutapodo, mutactivo, paiid } = req.body;
+                if (mutnom == "" || mutapodo == "" || mutactivo == "" || paiid == "") {
+                    
                     res.status(400).json({ message: "Bad Request. Please fill all field." });
                 }
                 res.json({ message: 'Mutant Saved' });
             }
             catch (e) {
-                res.status(500).json({ text: "Please fill current field" });
-                (0, error_handle_1.handleHttp)(res, 'ERROR_FIND_ITEMS');
+               
+                (res, 'ERROR_FIND_ITEMS');
             }
-        });
+            
+        }
+        );
+        
     }
     update(req, res) {
         return __awaiter(this, void 0, void 0, function* () {

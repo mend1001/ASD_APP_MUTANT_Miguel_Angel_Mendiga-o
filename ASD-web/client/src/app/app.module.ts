@@ -20,6 +20,8 @@ import { SearchPipe } from './pipes/search.pipe';
 import { PowerService } from './services/power-service/power.service';
 import { CountryListComponent } from './components/country-list/country-list.component';
 import { CountryService } from './services/country-service/country-service.service';
+import { EditPowerComponent } from './modal/edit-power/edit-power.component';
+import { CreatePowerByMutantComponent } from './modal/create-power-by-mutant/create-power-by-mutant.component';
 
 
 
@@ -34,14 +36,18 @@ import { CountryService } from './services/country-service/country-service.servi
     PowersListComponent,
     SearchPipe,
     SearchVehiclePipe,
-    CountryListComponent
+    CountryListComponent,
+    EditPowerComponent,
+    CreatePowerByMutantComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
+
 
   ],
   providers: [

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { PowerByMutant } from 'src/app/models/PowerByMutant';
 
 @Injectable({
   providedIn: 'root'
@@ -18,9 +19,13 @@ export class PowerService {
     return this.http.get(`${this.API_URI}/power/${powid}`);
   }
 
-  deletePower(powid: string) {
-    return this.http.delete(`${this.API_URI}/power/${powid}`);
+  deletePower(mutid: string) {
+    return this.http.delete(`${this.API_URI}/power/${mutid}`);
   }
+  createPowerMutant(powerByMutant: PowerByMutant) {
+    return this.http.post(`${this.API_URI}/power`, powerByMutant);
+  }
+
 
 
 

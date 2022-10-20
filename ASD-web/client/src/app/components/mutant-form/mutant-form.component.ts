@@ -2,8 +2,14 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 import { Mutant } from 'src/app/models/Mutant';
 import { MutantsService } from 'src/app/services/mutants-service/mutants.service';
 import { VehicleService } from 'src/app/services/vehicle-service/vehicle.service';
+import { CountryService } from 'src/app/services/country-service/country-service.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Vehicle } from 'src/app/models/Vehicle';
+import { Country } from 'src/app/models/Country';
+import { CreatePowerByMutantComponent } from 'src/app/modal/create-power-by-mutant/create-power-by-mutant.component';
+
+
+
 
 @Component({
   selector: 'app-mutant-form',
@@ -15,6 +21,7 @@ export class MutantFormComponent implements OnInit {
   @HostBinding('class') clases = 'row';
   mutants: any = [];
   vehicles: any = [];
+  countries: any = [];
 
     mutant: Mutant = {
     mutid: 0 ,
@@ -33,16 +40,24 @@ export class MutantFormComponent implements OnInit {
     vehid: 0 ,
     vehnom: ''
   };
+  country: Country = {
+    paiid: 0 ,
+    painom: '',
+    paicod: ''
+  };
 
   edit: boolean = false;
 
   constructor(private mutantsService: MutantsService,
                private vehicleService: VehicleService,
+               private countryService: CountryService,
                 private router: Router,
                   private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+
     this.getVehicles();
+    this.getCountry();
     const params = this.activatedRoute.snapshot.params;
     if (params.mutid) {
       this.mutantsService.getMutant(params.mutid)
@@ -59,9 +74,19 @@ export class MutantFormComponent implements OnInit {
 
   getVehicles() {
     this.vehicleService.getVehicles()
+    .subscribe(
+      res => {
+        this.vehicles = res;
+        console.log(res);
+      },
+      err => console.error(err)
+    );
+  }
+  getCountry() {
+    this.countryService.getCountry()
       .subscribe(
         res => {
-          this.vehicles = res;
+          this.countries = res;
           console.log(res);
         },
         err => console.error(err)
@@ -71,6 +96,7 @@ export class MutantFormComponent implements OnInit {
   saveNewMutant() {
 
     delete this.mutant.mutid;
+
     this.mutantsService.saveMutant(this.mutant)
       .subscribe(
         res => {
@@ -95,5 +121,6 @@ export class MutantFormComponent implements OnInit {
   list(){
     this.router.navigate(['/mutant']);
   }
+
 
 }
