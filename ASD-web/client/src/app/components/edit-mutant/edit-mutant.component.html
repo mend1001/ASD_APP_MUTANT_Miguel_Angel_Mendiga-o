@@ -29,6 +29,7 @@
             placeholder="ID"
             class="form-control"
             autofocus
+            disabled
             required=""
           />
         </div>
@@ -141,12 +142,6 @@
         </div>
 
 
-        <button class="btn btn-success btn-block" (click)="edit ? updateMutant() : saveNewMutant()">
-          Registrar
-        </button>
-        <button class="btn btn-success btn-block" (click)="list()">
-          Cancelar
-        </button>
       </form>
     </div>
   </div>
@@ -167,6 +162,15 @@
     <p>{{ mutant.paiid }}</p>
     <p>{{ mutant.podmutid }}</p>
     <div>
+      <div>
+        <div class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <h5>Seleccione todos los poderes que posea el mutante de la siguiente forma:</h5>
+        <p>- Seleccione el poder por tipo o por descripción </p>
+        <p>- Oprima el boton "Agregar". </p>
+        <p>- Repita el proceso con todos los poderes deseados. </p>
+        <p>- Cuando seleccione todos los poderes seleccione "Salir". </p>
+      </div>
+      </div>
       <select
     id="powerSelect"
       class="form-select form-select-lg mb-3"
@@ -197,10 +201,11 @@
       </div>
     </div>
 
-      <button class="btn btn-success btn-block" (click)="powerEdited()">
-        Editar poderes
-      </button>
-    </div>
+   </div>
+    <button id="But" type="button" class="btn btn-primary btn-lg btn-block" (click)="powerEdited()">Editar poderes</button>
 
-  </div>
+    <button id="But" type="button" class="btn btn-success" (click)="edit ? updateMutant() : saveNewMutant()">Registrar</button>
+
+    <button id="But" type="button" class="btn btn-danger" (click)="list()">Cancelar</button>
+
 </div>

@@ -18,7 +18,7 @@ class PowerController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const power = yield database_1.default.query('SELECT *  FROM  asd_prueba.t_poder AS pod');
+                const power = yield database_1.default.query('SELECT *  FROM  asd_prueba.t_poder AS pod ORDER BY pod.podtipo');
                 res.json(power);
             }
             catch (e) {
@@ -34,7 +34,7 @@ class PowerController {
                 const power = yield database_1.default.query('SELECT *  FROM  asd_prueba.t_poder AS pod  WHERE pod.podid = ?   GROUP BY pod.podid', [podid]);
                 console.log(power.length);
                 if (power.length > 0) {
-                    res.status(500).json({ text: "Please fill current field" });
+                    
                     return res.json(power[0]);
                 }
                 (0, error_handle_1.handleHttp)(res, 'ERROR_FIND_ITEMS');

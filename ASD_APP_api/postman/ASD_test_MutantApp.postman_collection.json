@@ -42,16 +42,9 @@
 							}
 						}
 					],
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \r\n    \"mutactivo\": 0,\r\n    \"mutapodo\": \"Ángel \",\r\n    \"mutnom\": \"Warren Kenneth Worthington III\",\r\n    \"rolid\": \"Sin motivaciones\",\r\n    \"vehid\": \"Ninguno (NOT)\",\r\n    \"conid\": \"Libre\",\r\n    \"paiid\": \"Estados Unidos de América (US)\",\r\n    \"podmutid\": null,\r\n    \"mutimg\": \"http://pm1.narvii.com/6579/a898ffbeb6937693b468bf940ce13d5bfe3b4677_00.jpg\"\r\n}"
-						},
 						"url": {
 							"raw": "http://localhost:3000/api/mutant/5",
 							"protocol": "http",
@@ -210,16 +203,9 @@
 							}
 						}
 					],
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \r\n    \"mutactivo\": 0,\r\n    \"mutapodo\": \"Ángel \",\r\n    \"mutnom\": \"Warren Kenneth Worthington III\",\r\n    \"rolid\": \"Sin motivaciones\",\r\n    \"vehid\": \"Ninguno (NOT)\",\r\n    \"conid\": \"Libre\",\r\n    \"paiid\": \"Estados Unidos de América (US)\",\r\n    \"podmutid\": null,\r\n    \"mutimg\": \"http://pm1.narvii.com/6579/a898ffbeb6937693b468bf940ce13d5bfe3b4677_00.jpg\"\r\n}"
-						},
 						"url": {
 							"raw": "http://localhost:3000/api/vehicle/5",
 							"protocol": "http",
@@ -263,7 +249,7 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/api/mutant/5",
+							"raw": "http://localhost:3000/api/vehicle/saved/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -271,8 +257,9 @@
 							"port": "3000",
 							"path": [
 								"api",
-								"mutant",
-								"5"
+								"vehicle",
+								"saved",
+								"2"
 							]
 						}
 					},
@@ -404,13 +391,49 @@
 					"response": []
 				},
 				{
+					"name": "deletePowers",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n    \"mutactivo\": 0,\r\n    \"mutapodo\": \"Ángel \",\r\n    \"mutnom\": \"Warren Kenneth Worthington III\",\r\n    \"rolid\": \"Sin motivaciones\",\r\n    \"vehid\": \"Ninguno (NOT)\",\r\n    \"conid\": \"Libre\",\r\n    \"paiid\": \"Estados Unidos de América (US)\",\r\n    \"podmutid\": null,\r\n    \"mutimg\": \"http://pm1.narvii.com/6579/a898ffbeb6937693b468bf940ce13d5bfe3b4677_00.jpg\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/power/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"power",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "createPowerByMutant",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"podid\": 6,\n    \"mutid\": 8\n}",
+							"raw": "{\n    \"podid\": 6,\n    \"mutid\": 96\n}",
 							"options": {
 								"raw": {
 									"language": "json"

@@ -18,7 +18,7 @@ class CountryController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const country = yield database_1.default.query('SELECT * FROM asd_prueba.t_pais AS pai ORDER BY pai.paiid ASC ');
+                const country = yield database_1.default.query('SELECT * FROM asd_prueba.t_pais AS pai ORDER BY pai.painom ASC ');
                 res.json(country);
             }
             catch (e) {

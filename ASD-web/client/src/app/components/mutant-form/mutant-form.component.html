@@ -125,8 +125,9 @@
 
         <div class="form-group">
           <p>Poderes:</p>
-          <div>
+
             <button
+            id = "But"
               type="button"
               class="btn btn-primary"
               data-bs-toggle="modal"
@@ -147,7 +148,7 @@
                 </div>
               </div>
             </div>
-          </div>
+
         </div>
       </form>
     </div>
@@ -165,7 +166,7 @@
     <h2>{{ mutant.mutapodo }}</h2>
     <h4>{{ mutant.mutnom }}</h4>
 
-    <button type="button" class="btn btn-success" (click)="saveNewMutant()">Registrar</button>
-    <button type="button" class="btn btn-danger" (click)="list()">Cancelar</button>
+    <button id = "But" type="button" class="btn btn-success" (click)="saveNewMutant()">Registrar</button>
+    <button id = "But" type="button" class="btn btn-danger" (click)="list()">Cancelar</button>
   </div>
 </div>
