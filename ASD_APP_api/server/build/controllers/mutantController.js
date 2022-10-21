@@ -37,7 +37,7 @@ class MutantController {
                     
                     return res.json(mutant[0]);
                 }
-                (0, error_handle_1.handleHttp)(res, 'ERROR_FIND_ITEMS');
+                
             }
             catch (e) {
                 (0, error_handle_1.handleHttp)(res, 'ERROR_FIND_ITEMS');
@@ -56,7 +56,7 @@ class MutantController {
                 res.json({ message: 'Mutant Saved' });
             }
             catch (e) {
-               
+                (0, error_handle_1.handleHttp)(res, 'ERROR_FIND_ITEMS');
                 (res, 'ERROR_FIND_ITEMS');
             }
             
@@ -99,8 +99,9 @@ class MutantController {
                 res.json({ message: "The mutant was deleted" });
             }
             catch (e) {
+                
                 res.status(500).json({ text: "Please fill current field" });
-                (0, error_handle_1.handleHttp)(res, 'ERROR_FIND_ITEMS');
+                res.status(0, error_handle_1.handleHttp)(res, 'ERROR_FIND_ITEMS');
             }
         });
     }

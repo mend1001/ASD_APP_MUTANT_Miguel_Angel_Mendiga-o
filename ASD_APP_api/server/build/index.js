@@ -30,6 +30,8 @@ class Server {
         this.app.use('/api/power', powerRoutes_1.default);
         this.app.use('/api/vehicle', vehicleRoutes_1.default);
         this.app.use('/api/country', countryRoutes_1.default);
+        this.app.use((req, res,next)=>{res.status(404).json({Message: 'endpoint not found'})});
+
     }
     start() {
         this.app.listen(this.app.get('port'), () => {
