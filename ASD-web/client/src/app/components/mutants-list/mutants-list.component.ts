@@ -16,6 +16,7 @@ export class MutantsListComponent implements OnInit {
 
   mutants: any = [];
   mutant$!: Observable<Mutant[]>;
+
 	filter = new FormControl('');
   showInactives = true;
   constructor(private mutantsService: MutantsService) { }

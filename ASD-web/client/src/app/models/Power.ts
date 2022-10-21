@@ -1,5 +1,5 @@
 export interface Power {
-  powid?: number,
-  powtipo?: string,
-  powdescripcion?: string,
+  podid?: number,
+  podtipo?: string,
+  poddescripcion?: string,
 };

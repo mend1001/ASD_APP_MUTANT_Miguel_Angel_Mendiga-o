@@ -107,13 +107,14 @@ font-size: 30pt;
 color: rgb(163, 79, 0);
 text-align: center;
 }
-#sear{
-width: 100%;
-margin: 10%;
-text-align: center;
-}
+
 #card{
   background: #bfc9f1;
   font-size: 21pt;
   color:#161f41;
 }
+#sear{
+
+  margin: 5%;
+
+  }

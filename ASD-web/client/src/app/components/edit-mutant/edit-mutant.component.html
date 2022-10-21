@@ -1,7 +1,7 @@
 <div id="cardM" class="col-md-4 offset-md-2">
   <div class="card">
     <div class="card-header">
-      <h3>Registrar mutante.</h3>
+      <h3>Editar mutante.</h3>
     </div>
     <div class="card-body">
       <form action="">
@@ -18,6 +18,22 @@
             <option value="0">Muerto</option>
           </select>
         </div>
+
+        <div class="form-group">
+          <p>ID:</p>
+          <input
+          id="mutid"
+            type= "number"
+            name="mutid"
+            [(ngModel)]="mutant.mutid"
+            placeholder="ID"
+            class="form-control"
+            autofocus
+            disabled
+            required=""
+          />
+        </div>
+
         <div class="form-group">
           <p>Alias:</p>
           <input
@@ -112,6 +128,8 @@
         </div>
 
 
+
+
         <div class="form-group">
           <p>Imagen:</p>
           <input
@@ -123,37 +141,12 @@
           />
         </div>
 
-        <div class="form-group">
-          <p>Poderes:</p>
 
-            <button
-            id = "But"
-              type="button"
-              class="btn btn-primary"
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-            >Registrar poderes</button>
-
-            <!-- Modal -->
-            <div
-              class="modal fade"
-              id="exampleModal"
-              tabindex="-1"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <app-create-power-by-mutant></app-create-power-by-mutant>
-                </div>
-              </div>
-            </div>
-
-        </div>
       </form>
     </div>
   </div>
 </div>
+
 
 <div id="cardM" class="col-md-4 card">
   <div class="card card-body text-center">
@@ -162,11 +155,57 @@
       alt="No Image"
       class="card-img-top"
     />
-
+    <h2>{{ mutant.mutactivo }}</h2>
     <h2>{{ mutant.mutapodo }}</h2>
     <h4>{{ mutant.mutnom }}</h4>
+    <p>{{ mutant.rolid == "" ? "X-men" : mutant.rolid }}</p>
+    <p>{{ mutant.paiid }}</p>
+    <p>{{ mutant.podmutid }}</p>
+    <div>
+      <div>
+        <div class="navbar navbar-light" style="background-color: #e3f2fd;">
+        <h5>Seleccione todos los poderes que posea el mutante de la siguiente forma:</h5>
+        <p>- Seleccione el poder por tipo o por descripción </p>
+        <p>- Oprima el boton "Agregar". </p>
+        <p>- Repita el proceso con todos los poderes deseados. </p>
+        <p>- Cuando seleccione todos los poderes seleccione "Salir". </p>
+      </div>
+      </div>
+      <select
+    id="powerSelect"
+      class="form-select form-select-lg mb-3"
+      name="podid"
+      [(ngModel)]="power.podid"
 
-    <button id = "But" type="button" class="btn btn-success" (click)="saveNewMutant()">Registrar</button>
-    <button id = "But" type="button" class="btn btn-danger" (click)="list()">Cancelar</button>
-  </div>
+    >
+      <option *ngFor="let power of powers" value="{{ power.podid }}">
+        {{ power.podtipo }}
+      </option>
+    </select>
+
+    <select
+      class="form-select form-select-lg mb-3"
+      name="podid"
+      size="1"
+      [(ngModel)]="power.podid"
+    >
+      <option *ngFor="let power of powers" value="{{ power.podid }}">
+        {{ power.poddescripcion }}
+      </option>
+    </select>
+
+    <div class="col-md-12 card">
+      <div class="card card-body text-center">
+        <h3>ID: {{ power.podid }}</h3>
+
+      </div>
+    </div>
+
+   </div>
+    <button id="But" type="button" class="btn btn-primary btn-lg btn-block" (click)="powerEdited()">Editar poderes</button>
+
+    <button id="But" type="button" class="btn btn-success" (click)="edit ? updateMutant() : saveNewMutant()">Registrar</button>
+
+    <button id="But" type="button" class="btn btn-danger" (click)="list()">Cancelar</button>
+
 </div>

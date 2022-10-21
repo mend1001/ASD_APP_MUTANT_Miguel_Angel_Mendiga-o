@@ -18,7 +18,7 @@ class PowerController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                const power = yield database_1.default.query('SELECT *  FROM  asd_prueba.t_poder AS pod GROUP BY pod.podid ');
+                const power = yield database_1.default.query('SELECT *  FROM  asd_prueba.t_poder AS pod ORDER BY pod.podtipo');
                 res.json(power);
             }
             catch (e) {
@@ -31,7 +31,7 @@ class PowerController {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const { podid } = req.params;
-                const power = yield database_1.default.query('SELECT *  FROM  asd_prueba.t_poder AS pod  WHERE pod.podid = ? ', [podid]);
+                const power = yield database_1.default.query('SELECT *  FROM  asd_prueba.t_poder AS pod  WHERE pod.podid = ?   GROUP BY pod.podid', [podid]);
                 console.log(power.length);
                 if (power.length > 0) {
                     
@@ -40,7 +40,6 @@ class PowerController {
                 (0, error_handle_1.handleHttp)(res, 'ERROR_FIND_ITEMS');
             }
             catch (e) {
-                res.status(500).json({ text: "Please fill current field" });
                 (0, error_handle_1.handleHttp)(res, 'ERROR_FIND_ITEMS');
             }
         });
@@ -68,6 +67,19 @@ class PowerController {
                 const oldPower = req.body;
                 yield database_1.default.query('UPDATE asd_prueba.t_poder SET ? WHERE podid = ?', [req.body, podid]);
                 res.json({ message: "The power was Updated" });
+            }
+            catch (e) {
+                res.status(500).json({ text: "Please fill current field" });
+                (0, error_handle_1.handleHttp)(res, 'ERROR_FIND_ITEMS');
+            }
+        });
+    }
+    delete(req, res) {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                const { mutid } = req.params;
+                yield database_1.default.query("DELETE FROM asd_prueba.t_poder_mutante WHERE mutid = ?", [mutid]);
+                res.json({ message: "The powers was deleted" });
             }
             catch (e) {
                 res.status(500).json({ text: "Please fill current field" });

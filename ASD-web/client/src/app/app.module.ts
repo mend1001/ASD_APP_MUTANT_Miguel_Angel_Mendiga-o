@@ -18,6 +18,11 @@ import { VehicleService } from './services/vehicle-service/vehicle.service';
 import { SearchVehiclePipe } from './pipes/search-vehicle.pipe';
 import { SearchPipe } from './pipes/search.pipe';
 import { PowerService } from './services/power-service/power.service';
+import { CountryListComponent } from './components/country-list/country-list.component';
+import { CountryService } from './services/country-service/country-service.service';
+import { EditPowerComponent } from './modal/edit-power/edit-power.component';
+import { CreatePowerByMutantComponent } from './modal/create-power-by-mutant/create-power-by-mutant.component';
+import { EditMutantComponent } from './components/edit-mutant/edit-mutant.component';
 
 
 
@@ -31,20 +36,27 @@ import { PowerService } from './services/power-service/power.service';
     VehicleFormComponent,
     PowersListComponent,
     SearchPipe,
-    SearchVehiclePipe
+    SearchVehiclePipe,
+    CountryListComponent,
+    EditPowerComponent,
+    CreatePowerByMutantComponent,
+    EditMutantComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
+
 
   ],
   providers: [
     PowerService,
     MutantsService,
-    VehicleService
+    VehicleService,
+    CountryService
   ],
   bootstrap: [AppComponent]
 })

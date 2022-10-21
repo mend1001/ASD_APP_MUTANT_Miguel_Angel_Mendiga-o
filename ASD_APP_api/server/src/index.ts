@@ -4,7 +4,8 @@ import cors from 'cors';
 import indexRoutes from './routes/indexRoutes';
 import mutantRoutes from './routes/mutantRoutes';
 import vehicleRoutes from './routes/vehicleRoutes';
-import powerRoutes from './routes/mutantRoutes';
+import powerRoutes from './routes/powerRoutes';
+import countryRoutes from './routes/countryRoutes';
 class Server {
 
     public app: Application;
@@ -29,6 +30,7 @@ class Server {
         this.app.use('/api/mutant', mutantRoutes);
         this.app.use('/api/power', powerRoutes);
         this.app.use('/api/vehicle', vehicleRoutes);
+        this.app.use('/api/country', countryRoutes);
     }
 
     start() {

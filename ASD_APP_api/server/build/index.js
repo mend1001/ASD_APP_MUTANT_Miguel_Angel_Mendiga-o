@@ -10,6 +10,7 @@ const indexRoutes_1 = __importDefault(require("./routes/indexRoutes"));
 const mutantRoutes_1 = __importDefault(require("./routes/mutantRoutes"));
 const vehicleRoutes_1 = __importDefault(require("./routes/vehicleRoutes"));
 const powerRoutes_1 = __importDefault(require("./routes/powerRoutes"));
+const countryRoutes_1 = __importDefault(require("./routes/countryRoutes"));
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
@@ -28,6 +29,9 @@ class Server {
         this.app.use('/api/mutant', mutantRoutes_1.default);
         this.app.use('/api/power', powerRoutes_1.default);
         this.app.use('/api/vehicle', vehicleRoutes_1.default);
+        this.app.use('/api/country', countryRoutes_1.default);
+        this.app.use((req, res,next)=>{res.status(404).json({Message: 'endpoint not found'})});
+
     }
     start() {
         this.app.listen(this.app.get('port'), () => {

@@ -31,10 +31,9 @@ class VehicleController {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const { vehid } = req.params;
-                const vehicle = yield database_1.default.query('SELECT * FROM  asd_prueba.t_vehiculo AS veh WHERE veh.vehid = ?  ', [vehid]);
+                const vehicle = yield database_1.default.query('SELECT * FROM  asd_prueba.t_vehiculo AS veh WHERE veh.vehid = ? ', [vehid]);
                 console.log(vehicle.length);
                 if (vehicle.length > 0) {
-                    
                     return res.json(vehicle[0]);
                 }
                 (0, error_handle_1.handleHttp)(res, 'ERROR_FIND_ITEMS');
@@ -56,8 +55,7 @@ class VehicleController {
                 res.json({ message: 'vehicle Saved' });
             }
             catch (e) {
-                res.status(500).json({ text: "Please fill current field" });
-                (0, error_handle_1.handleHttp)(res, 'ERROR_FIND_ITEMS');
+                (res, 'ERROR_FIND_ITEMS');
             }
         });
     }
@@ -79,7 +77,7 @@ class VehicleController {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const { vehid } = req.params;
-                yield database_1.default.query("UPDATE asd_prueba.t_vehiculo SET t_vehiculo.vehactivo = '0' WHERE t_vehiculo.vehid = ?", [vehid]);
+                yield database_1.default.query("UPDATE asd_prueba.t_vehiculo SET t_vehiculo.vehactivo = '0' WHERE vehid = ?", [vehid]);
                 res.json({ message: "The vehicle was deleted" });
             }
             catch (e) {
@@ -92,8 +90,8 @@ class VehicleController {
         return __awaiter(this, void 0, void 0, function* () {
             try {
                 const { vehid } = req.params;
-                yield database_1.default.query("UPDATE asd_prueba.t_vehiculo SET t_vehiculo.vehactivo = '1' WHERE t_vehiculo.vehid = ?", [vehid]);
-                res.json({ message: "The vehicle was saved" });
+                yield database_1.default.query("UPDATE asd_prueba.t_vehiculo SET t_vehiculo.vehactivo = '1' WHERE vehid = ?", [vehid]);
+                res.json({ message: "The vehicle was fixed" });
             }
             catch (e) {
                 res.status(500).json({ text: "Please fill current field" });
