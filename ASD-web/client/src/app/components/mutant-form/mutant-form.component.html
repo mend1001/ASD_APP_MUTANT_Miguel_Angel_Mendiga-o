@@ -111,24 +111,6 @@
           </div>
         </div>
 
-        <div class="form-group">
-          <p>Poderes:</p>
-          <div>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              Registrar poderes.
-            </button>
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                   <app-create-power-by-mutant></app-create-power-by-mutant>
-                </div>
-              </div>
-            </div>
-
-           </div>
-        </div>
 
         <div class="form-group">
           <p>Imagen:</p>
@@ -142,18 +124,31 @@
         </div>
 
         <div class="form-group">
+          <p>Poderes:</p>
+          <div>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >Registrar poderes</button>
 
-
-
-
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <app-create-power-by-mutant></app-create-power-by-mutant>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <button class="btn btn-success btn-block" (click)="saveNewMutant() ">
-          Registrar
-        </button>
-        <button class="btn btn-success btn-block" (click)="list()">
-          Cancelar
-        </button>
       </form>
     </div>
   </div>
@@ -166,11 +161,11 @@
       alt="No Image"
       class="card-img-top"
     />
-    <h2>{{ mutant.mutactivo }}</h2>
+
     <h2>{{ mutant.mutapodo }}</h2>
     <h4>{{ mutant.mutnom }}</h4>
-    <p>{{ mutant.rolid == "" ? "X-men" : mutant.rolid }}</p>
-    <p>{{ mutant.paiid }}</p>
-    <p>{{ mutant.podmutid }}</p>
+
+    <button type="button" class="btn btn-success" (click)="saveNewMutant()">Registrar</button>
+    <button type="button" class="btn btn-danger" (click)="list()">Cancelar</button>
   </div>
 </div>
