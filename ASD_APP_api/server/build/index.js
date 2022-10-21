@@ -11,6 +11,7 @@ const mutantRoutes_1 = __importDefault(require("./routes/mutantRoutes"));
 const vehicleRoutes_1 = __importDefault(require("./routes/vehicleRoutes"));
 const powerRoutes_1 = __importDefault(require("./routes/powerRoutes"));
 const countryRoutes_1 = __importDefault(require("./routes/countryRoutes"));
+const config_1 = require("./config");
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
@@ -18,7 +19,6 @@ class Server {
         this.routes();
     }
     config() {
-        this.app.set('port', process.env.PORT || 3000);
         this.app.use((0, morgan_1.default)('dev'));
         this.app.use((0, cors_1.default)());
         this.app.use(express_1.default.json());
@@ -30,13 +30,10 @@ class Server {
         this.app.use('/api/power', powerRoutes_1.default);
         this.app.use('/api/vehicle', vehicleRoutes_1.default);
         this.app.use('/api/country', countryRoutes_1.default);
-        this.app.use((req, res,next)=>{res.status(404).json({Message: 'endpoint not found'})});
-
     }
     start() {
-        this.app.listen(this.app.get('port'), () => {
-            console.log('Server response on port', this.app.get('port'));
-        });
+        this.app.listen(config_1.PORT);
+        console.log('Server response on port', (config_1.PORT));
     }
 }
 const server = new Server();
