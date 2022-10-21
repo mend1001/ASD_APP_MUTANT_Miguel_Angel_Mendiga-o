@@ -6,6 +6,7 @@ import mutantRoutes from './routes/mutantRoutes';
 import vehicleRoutes from './routes/vehicleRoutes';
 import powerRoutes from './routes/powerRoutes';
 import countryRoutes from './routes/countryRoutes';
+import  { PORT } from './config'
 class Server {
 
     public app: Application;
@@ -17,7 +18,7 @@ class Server {
         
     }
     config(): void {
-        this.app.set('port', process.env.PORT || 3000);
+       
 
         this.app.use(morgan('dev'));
         this.app.use(cors());
@@ -34,12 +35,12 @@ class Server {
     }
 
     start() {
-        this.app.listen(this.app.get('port'), () => {
-            console.log('Server response on port', this.app.get('port'));
-        });
+        this.app.listen(PORT)
+            console.log('Server response on port',(PORT))
+        }
     }
 
-}
+
 
 const server = new Server();
 server.start();
