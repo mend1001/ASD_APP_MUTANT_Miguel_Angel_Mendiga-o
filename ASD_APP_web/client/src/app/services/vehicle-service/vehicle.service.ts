@@ -21,11 +21,11 @@ export class VehicleService {
   }
 
   deadVehicle(vehid: string) {
-    return this.http.delete(`${this.API_URI}/vehicle/${vehid}`);
+    return this.http.delete(`${this.API_URI}/vehicle/dead/${vehid}`);
   }
 
   survivedVehicle(vehid: string) {
-    return this.http.delete(`${this.API_URI}/vehicle/saved/${vehid}`);
+    return this.http.delete(`${this.API_URI}/vehicle/survived/${vehid}`);
   }
 
   saveVehicle(vehicle: Vehicle) {

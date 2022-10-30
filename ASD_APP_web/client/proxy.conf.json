@@ -1,6 +1,6 @@
 {
   "/api/*":{
-    "target":"https://prueba-production-93f0.up.railway.app/",
+    "target":"http://localhost:3000/",
     "secure": true,
     "loglevel":"debug",
     "changeOrigin":true
