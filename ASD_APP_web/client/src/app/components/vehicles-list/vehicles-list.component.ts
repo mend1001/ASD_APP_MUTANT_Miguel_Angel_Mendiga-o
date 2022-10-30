@@ -35,8 +35,8 @@ export class VehiclesListComponent implements OnInit {
       );
   }
 
-  deleteVehicle(vehid: string) {
-    this.vehicleService.deleteVehicle(vehid)
+  deadVehicle(vehid: string) {
+    this.vehicleService.deadVehicle(vehid)
       .subscribe(
         res => {
           console.log(res);
@@ -45,8 +45,8 @@ export class VehiclesListComponent implements OnInit {
         err => console.error(err)
       )
   }
-  saved(vehid: string) {
-    this.vehicleService.saved(vehid)
+  survivedVehicle(vehid: string) {
+    this.vehicleService.deadVehicle(vehid)
       .subscribe(
         res => {
           console.log(res);
@@ -55,5 +55,6 @@ export class VehiclesListComponent implements OnInit {
         err => console.error(err)
       )
   }
+
 
 }

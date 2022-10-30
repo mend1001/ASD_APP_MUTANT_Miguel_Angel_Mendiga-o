@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class VehicleService {
 
-  API_URI = 'http://localhost:3000/api';
+  API_URI = '/api';
 
   constructor(private http: HttpClient) { }
 
@@ -20,19 +20,20 @@ export class VehicleService {
     return this.http.get(`${this.API_URI}/vehicle/${vehid}`);
   }
 
-  deleteVehicle(vehid: string) {
+  deadVehicle(vehid: string) {
     return this.http.delete(`${this.API_URI}/vehicle/${vehid}`);
   }
 
-  saved(vehid: string) {
+  survivedVehicle(vehid: string) {
     return this.http.delete(`${this.API_URI}/vehicle/saved/${vehid}`);
   }
+
   saveVehicle(vehicle: Vehicle) {
     return this.http.post(`${this.API_URI}/vehicle`, vehicle);
   }
 
   updateVehicle(vehid: string|number, updateVehicle: Vehicle): Observable<Vehicle> {
-    return this.http.put(`${this.API_URI}/vehicle/${vehid}`, updateVehicle);
+    return this.http.patch(`${this.API_URI}/vehicle/${vehid}`, updateVehicle);
   }
 
 }

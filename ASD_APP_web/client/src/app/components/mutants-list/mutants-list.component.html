@@ -27,7 +27,7 @@
       <p>{{ mutant.mutnom }}</p>
 
       <button
-        (click)="deleteMutant(mutant.mutid)"
+        (click)="deadMutant(mutant.mutid)"
         type="button"
         class="btn btn-outline-secondary"
       >
@@ -60,7 +60,7 @@
     <div id="dead" *ngIf="mutant.mutactivo == 0">
       <p>Esta muerto(a).</p>
       <button
-        (click)="survived(mutant.mutid)"
+        (click)="survivedMutant(mutant.mutid)"
         type="button"
         class="btn btn-outline-secondary"
       >

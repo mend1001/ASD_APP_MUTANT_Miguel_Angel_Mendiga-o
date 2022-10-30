@@ -38,8 +38,8 @@ export class MutantsListComponent implements OnInit {
       );
   }
 
-  deleteMutant(mutid: string) {
-    this.mutantsService.deleteMutant(mutid)
+  deadMutant(mutid: string) {
+    this.mutantsService.deadMutant(mutid)
       .subscribe(
         res => {
           console.log(res);
@@ -48,8 +48,8 @@ export class MutantsListComponent implements OnInit {
         err => console.error(err)
       )
   }
-  survived(mutid: string) {
-    this.mutantsService.survived(mutid)
+  survivedMutant(mutid: string) {
+    this.mutantsService.survivedMutant(mutid)
       .subscribe(
         res => {
           console.log(res);

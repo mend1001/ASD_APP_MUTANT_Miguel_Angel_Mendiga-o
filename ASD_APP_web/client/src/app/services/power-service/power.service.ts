@@ -7,7 +7,7 @@ import { PowerByMutant } from 'src/app/models/PowerByMutant';
 })
 export class PowerService {
 
-  API_URI = 'http://localhost:3000/api';
+  API_URI = '/api';
 
   constructor(private http: HttpClient) { }
 

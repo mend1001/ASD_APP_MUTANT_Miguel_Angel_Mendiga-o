@@ -1,0 +1,9 @@
+{
+  "/api/*":{
+    "target":"https://prueba-production-93f0.up.railway.app/",
+    "secure": true,
+    "loglevel":"debug",
+    "changeOrigin":true
+  }
+
+}

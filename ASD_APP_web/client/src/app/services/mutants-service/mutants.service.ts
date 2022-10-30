@@ -10,7 +10,7 @@ import { Power } from 'src/app/models/power';
 })
 export class MutantsService {
 
-  API_URI = 'http://localhost:3000/api';
+  API_URI = '/api';
 
   constructor(private http: HttpClient) { }
 
@@ -26,15 +26,18 @@ export class MutantsService {
     return this.http.delete(`${this.API_URI}/mutant/${mutid}`);
   }
 
-  survived(mutid: string) {
+  survivedMutant(mutid: string) {
     return this.http.delete(`${this.API_URI}/mutant/survived/${mutid}`);
+  }
+  deadMutant(mutid: string) {
+    return this.http.delete(`${this.API_URI}/mutant/dead/${mutid}`);
   }
   saveMutant(mutant: Mutant) {
     return this.http.post(`${this.API_URI}/mutant`, mutant);
   }
 
   updateMutant(mutid: string|number, updatedMutant: Mutant): Observable<Mutant> {
-    return this.http.put(`${this.API_URI}/mutant/${mutid}`, updatedMutant);
+    return this.http.patch(`${this.API_URI}/mutant/${mutid}`, updatedMutant);
   }
 
 
