@@ -46,7 +46,7 @@ export class VehiclesListComponent implements OnInit {
       )
   }
   survivedVehicle(vehid: string) {
-    this.vehicleService.deadVehicle(vehid)
+    this.vehicleService.survivedVehicle(vehid)
       .subscribe(
         res => {
           console.log(res);

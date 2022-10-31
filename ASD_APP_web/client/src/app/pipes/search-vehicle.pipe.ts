@@ -7,7 +7,7 @@ export class SearchVehiclePipe implements PipeTransform {
 
   transform(value: any, arg: any): any {
 
-    if (arg === '' || arg.length < 1) return value;
+    if (arg === '' || arg.length < 3) return value;
     const result = [];
     for (const vehicle of value) {
       if (vehicle.vehnom.toLowerCase().indexOf(arg.toLowerCase()) > -1) {
