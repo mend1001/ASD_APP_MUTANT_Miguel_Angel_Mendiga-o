@@ -1,4 +1,4 @@
-<div id="cardM" class="col-md-4 offset-md-2">
+<div id="cardM" class="col-md-4 offset-md-1">
   <div class="card">
     <div class="card-header">
       <h3>Registrar mutante.</h3>
@@ -118,6 +118,10 @@
               </option>
             </select>
           </div>
+          <div class="text-primary" style="--bs-text-opacity: .5;"
+          *ngIf="mutant.paiid === ''">
+       <span >Este campo es obligatorio</span>
+       </div>
         </div>
 
 
@@ -174,7 +178,7 @@
 
     <h2>{{ mutant.mutapodo }}</h2>
     <h4>{{ mutant.mutnom }}</h4>
-<div *ngIf="mutant.rolid != '0' &&
+<div *ngIf="mutant.paiid != '0' &&
             mutant.mutapodo != '0' &&
             mutant.mutnom != ''">
 

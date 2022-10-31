@@ -1,4 +1,4 @@
-<div id="cardM" class="col-md-4 offset-md-2">
+<div id="cardM" class="col-md-4 offset-md-1">
   <div class="card">
     <div class="card-header">
       <h3>Editar mutante.</h3>
@@ -118,6 +118,7 @@
 
         <div class="form-group">
           <div class="form-group">
+
             <p>Pais de origen:</p>
             <select
               class="form-select form-select-lg mb-3"
@@ -131,12 +132,14 @@
               >
                 {{ country.painom }}
               </option>
+
             </select>
+            <div class="text-primary" style="--bs-text-opacity: .5;"
+            *ngIf="mutant.paiid !== ''">
+              <span >Este campo es obligatorio</span>
+              </div>
           </div>
         </div>
-
-
-
 
         <div class="form-group">
           <p>Imagen:</p>
@@ -148,8 +151,6 @@
             class="form-control"
           />
         </div>
-
-
       </form>
     </div>
   </div>
@@ -216,7 +217,7 @@
 
    </div>
     <button id="But" type="button" class="btn btn-primary btn-lg btn-block" (click)="powerEdited()">Editar poderes</button>
-    <div *ngIf="mutant.rolid != '0' &&
+    <div *ngIf="mutant.paiid != '0' &&
     mutant.mutapodo != '0' &&
     mutant.mutnom != ''">
     <button id="But" type="button" class="btn btn-success" (click)="edit ? updateMutant() : saveNewMutant()">Registrar</button>
