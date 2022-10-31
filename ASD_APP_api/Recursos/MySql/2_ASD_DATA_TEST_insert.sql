@@ -1,3 +1,11 @@
+truncate t_condicion;
+truncate t_mutantes;
+truncate t_pais;
+truncate t_poder;
+truncate t_poder_mutante;
+truncate t_rol;
+truncate t_vehiculo;
+
 INSERT INTO t_poder (podtipo, poddescripcion) VALUES
 ("Aspecto físico no-humano","El poder puede provenir de un rasgo no-humano de la constitución física del sujeto (una criatura completamente formada por fuego, o roca, por ejemplo)."),
 ("Tecnopatía","Habilidad para manipular tecnología. Puede manifestarse como una forma particular de manipulación eléctrica, una forma especial de polimorfismo, o incluso una forma especial de percepción extrasensorial."),
