@@ -45,6 +45,10 @@
             autofocus
             required=""
           />
+          <div class="text-primary" style="--bs-text-opacity: .5;"
+          *ngIf="mutant.mutapodo === ''">
+       <span >Este campo es obligatorio</span>
+       </div>
         </div>
 
         <div class="form-group">
@@ -58,6 +62,10 @@
             autofocus
             required=""
           />
+          <div class="text-primary" style="--bs-text-opacity: .5;"
+          *ngIf="mutant.mutnom === ''">
+       <span >Este campo es obligatorio</span>
+       </div>
         </div>
 
         <div class="form-group">
@@ -170,6 +178,11 @@
         <p>- Repita el proceso con todos los poderes deseados. </p>
         <p>- Cuando seleccione todos los poderes seleccione "Salir". </p>
       </div>
+      <div *ngIf="mutant.mutnom === '' &&
+       mutant.mutapodo === ''">
+       <h5>El nombre y el alias son abligatorios, una vez</h5>
+       <h5> ingresados se habilita el botón de registrar</h5>
+      </div>
       </div>
       <select
     id="powerSelect"
@@ -203,9 +216,14 @@
 
    </div>
     <button id="But" type="button" class="btn btn-primary btn-lg btn-block" (click)="powerEdited()">Editar poderes</button>
-
+    <div *ngIf="mutant.rolid != '0' &&
+    mutant.mutapodo != '0' &&
+    mutant.mutnom != ''">
     <button id="But" type="button" class="btn btn-success" (click)="edit ? updateMutant() : saveNewMutant()">Registrar</button>
 
-    <button id="But" type="button" class="btn btn-danger" (click)="list()">Cancelar</button>
 
+  </div>
+  <div>
+  <button id="But" type="button" class="btn btn-danger" (click)="list()">Cancelar</button>
+</div>
 </div>

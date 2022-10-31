@@ -2,7 +2,7 @@
   <div class="card">
     <div class="card-header">
       <h3>Registrar vehiculo.</h3>
-    </div>
+
     <div class="card-body">
       <form action="">
         <div class="form-group">
@@ -26,10 +26,18 @@
         <div class="form-group">
           <p>Nombre:</p>
           <input type="text" name="vehnom" [(ngModel)]="vehicle.vehnom" placeholder="Nombre" class="form-control" autofocus required="">
+          <div class="text-primary" style="--bs-text-opacity: .5;"
+          *ngIf="vehicle.vehnom === ''">
+       <span >Este campo es obligatorio</span>
+       </div>
         </div>
         <div class="form-group">
           <p>Descripción:</p>
           <textarea type="text" name="vehdescripcion" [(ngModel)]="vehicle.vehdescripcion" placeholder="Escribe aqui tu descripción...." class="form-control" autofocus required=""></textarea>
+          <div class="text-primary" style="--bs-text-opacity: .5;"
+          *ngIf="vehicle.vehdescripcion=== ''">
+       <span >Este campo es obligatorio</span>
+       </div>
         </div>
 
         <div class="form-group">
@@ -51,9 +59,12 @@
     <h2>{{vehicle.vehnom}}</h2>
     <h4>{{vehicle.vehcodigo}}</h4>
        <p>{{vehicle.vehdescripcion}}</p>
-
+       <div *ngIf="vehicle.vehnom !== '' &&
+       vehicle.vehdescripcion !== ''">
        <button id = "But" type="button" class="btn btn-success" (click)="edit ? updateVehicle() : saveNewVehicle()">Registrar</button>
-      <button id = "But" type="button" class="btn btn-danger" (click)="list()">Cancelar</button>
 
-
-</div>
+    </div>
+    <div>
+    <button id = "But" type="button" class="btn btn-danger" (click)="list()">Cancelar</button>
+  </div>
+  </div>

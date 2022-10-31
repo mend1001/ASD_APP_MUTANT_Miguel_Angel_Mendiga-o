@@ -3,6 +3,7 @@
     <div class="card-header">
       <h3>Registrar mutante.</h3>
     </div>
+
     <div class="card-body">
       <form action="">
         <div class="form-group">
@@ -29,6 +30,10 @@
             autofocus
             required=""
           />
+          <div class="text-primary" style="--bs-text-opacity: .5;"
+          *ngIf="mutant.mutapodo === ''">
+       <span >Este campo es obligatorio</span>
+       </div>
         </div>
 
         <div class="form-group">
@@ -42,6 +47,10 @@
             autofocus
             required=""
           />
+          <div class="text-primary" style="--bs-text-opacity: .5;"
+          *ngIf="mutant.mutnom === ''">
+       <span >Este campo es obligatorio</span>
+       </div>
         </div>
 
         <div class="form-group">
@@ -165,8 +174,15 @@
 
     <h2>{{ mutant.mutapodo }}</h2>
     <h4>{{ mutant.mutnom }}</h4>
+<div *ngIf="mutant.rolid != '0' &&
+            mutant.mutapodo != '0' &&
+            mutant.mutnom != ''">
 
     <button id = "But" type="button" class="btn btn-success" (click)="saveNewMutant()">Registrar</button>
-    <button id = "But" type="button" class="btn btn-danger" (click)="list()">Cancelar</button>
+
   </div>
+  <div>
+  <button id = "But" type="button" class="btn btn-danger" (click)="list()">Cancelar</button>
+</div>
+</div>
 </div>
